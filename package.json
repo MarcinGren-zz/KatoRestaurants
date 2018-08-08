@@ -1,5 +1,5 @@
 {
-  "name": "yelpcamp",
+  "name": "katorestaurants",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MarcinGren/YelpCamp.git"
+    "url": "git+https://github.com/MarcinGren/KatoRestaurants.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MarcinGren/YelpCamp/issues"
+    "url": "https://github.com/MarcinGren/KatoRestaurants/issues"
   },
-  "homepage": "https://github.com/MarcinGren/YelpCamp#readme",
+  "homepage": "https://github.com/MarcinGren/KatoRestaurants#readme",
   "dependencies": {
     "express": "^4.16.3"
   }
