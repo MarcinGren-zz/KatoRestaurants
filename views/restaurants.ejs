@@ -1,7 +1,12 @@
+<% include partials/header.ejs %>
+
 <h1>Restaurants page</h1>
 
-<ul>
-    <% restaurants.forEach(function(restaurant) { %>
-        <li><%= restaurant.name %> - <img src="<%= restaurant.image %>"></li>
-    <% }) %>
-</ul>
+<% restaurants.forEach(function(restaurant) { %>
+    <div>
+        <h4><%= restaurant.name %></h4>
+        <img src="<%= restaurant.image %>">
+    </div>
+<% }) %>
+
+<% include partials/footer.ejs %>
