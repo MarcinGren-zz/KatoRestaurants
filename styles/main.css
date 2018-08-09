@@ -1,16 +1,40 @@
-.hdr {
-    width: 100%;
-    height: 30px;
-    background-color: #c2c2a3;
-    color: #3e3e28;
-    overflow: hidden;
-    padding: 50px 50px;
-    margin: 0;
-    text-align: left;
-    font-size: 3em;
-}
-
 body {
     margin: 0;
     font-family: 'Inconsolata', monospace;
+}
+
+.container {
+    padding-right: 10%;
+    padding-left: 10%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+.hdr {
+    width: 100%;
+    height: 200px;
+    background-color: #dfdfc8;
+    color: #3e3e28;
+    overflow: hidden;
+    padding: 10px 30px;
+    margin: 0;
+    text-align: left;
+    font-size: 3em;
+    box-sizing: border-box;
+}
+
+.hdr p {
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+.button {
+    background-color: #4d4b68;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
