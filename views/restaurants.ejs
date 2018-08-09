@@ -1,17 +1,20 @@
 <% include partials/header.ejs %>
 <link rel="stylesheet" href="styles/main.css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
-<header class=hdr>restaurants here</header>
+<div class="container">
+    <header class=hdr>restaurants</header>
 
-<h1>Restaurants page</h1>
+    <h1>Restaurants page</h1>
 
-<a href="/restaurants/new">Add new restaurant</a>
+    <a href="/restaurants/new">Add new restaurant</a>
 
-<% restaurants.forEach(function(restaurant) { %>
-    <div>
-        <h4><%= restaurant.name %></h4>
-        <img src="<%= restaurant.image %>">
-    </div>
-<% }) %>
+    <% restaurants.forEach(function(restaurant) { %>
+        <div>
+            <h4><%= restaurant.name %></h4>
+            <img src="<%= restaurant.image %>">
+        </div>
+    <% }) %>
+</div>
 
 <% include partials/footer.ejs %>
