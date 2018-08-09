@@ -46,8 +46,18 @@ img {
 
 .rows__listing {
     width: 30%;
-    padding-bottom: 30%;
     float: left;
     margin: 1.66%;
     border-radius: 25%;
 }
+
+figure {
+    float: right;
+    text-align: center;
+    font-style: italic;
+    font-size: smaller;
+    text-indent: 0;
+    border: thin solid silver;
+    margin: 0.5em;
+    padding: 0.5em;
+  }

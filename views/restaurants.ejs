@@ -20,11 +20,14 @@
 
             <% restaurants.forEach(function(restaurant) { %>
                 <div class='rows__listing'>
-                    <h4><%= restaurant.name %></h4>
-                    <img src="<%= restaurant.image %>">
+                    <figure>
+                        <figcaption><%= restaurant.name %></figcaption>                        
+                        <p><img src="<%= restaurant.image %>">
+                    </figure>
                 </div>
                 <% }) %>
         </div>
     </div>
 
-    <% include partials/footer.ejs %>
+    <!-- <% include partials/footer.ejs %> -->
+    <!-- disabled as its messed up atm -->
