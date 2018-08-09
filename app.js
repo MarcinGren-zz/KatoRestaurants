@@ -9,6 +9,8 @@ var restaurants = [
 ]
 
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.static(__dirname + '/'))
+
 app.get('/', function(req, res) {
     res.render('homepage.ejs')
 })

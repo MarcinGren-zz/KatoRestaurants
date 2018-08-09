@@ -1,0 +1,10 @@
+.hdr {
+    width: 100%;
+    height: 20px;
+    background-color: burlywood;
+    color: white;
+}
+
+body {
+    background-color: red;
+}
