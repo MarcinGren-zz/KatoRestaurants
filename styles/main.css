@@ -4,19 +4,24 @@ body {
 }
 
 .container {
-    padding-right: 10%;
-    padding-left: 10%;
+    padding-right: 5%;
+    padding-left: 5%;
     margin-right: auto;
     margin-left: auto;
   }
 
+img {
+    object-fit: fill;
+    height: 320px;
+    width: 320px;
+}
+
 .hdr {
     width: 100%;
-    height: 200px;
+    height: 170px;
     background-color: #dfdfc8;
     color: #3e3e28;
     overflow: hidden;
-    padding: 10px 30px;
     margin: 0;
     text-align: left;
     font-size: 3em;
@@ -37,4 +42,12 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+.rows__listing {
+    width: 30%;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+    border-radius: 25%;
 }

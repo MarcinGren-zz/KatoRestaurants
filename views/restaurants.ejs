@@ -1,24 +1,30 @@
 <% include partials/header.ejs %>
-<link rel="stylesheet" href="styles/main.css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
-<div class="container">
-    <header class=hdr>
-        restaurants
-        <p>check out these restaurants</p>
-        <p>
-            <a class="button" href="/restaurants/new">Add new restaurant</a>   
-        </p>
-    </header>
+    <div class="container">
+        <header class=hdr>
+            <div class="container">
+                restaurants
+                <p>check out these restaurants</p>
+                <p>
+                    <a class="button" href="/restaurants/new">Add new restaurant</a>
+                </p>
+            </div>
+        </header>
 
-    <h1>Restaurants page</h1>
+        <div class="rows">
+            <div class="rows__full-width">
+                <h3>Lovely restaurants</h3>
+            </div>
 
-    <% restaurants.forEach(function(restaurant) { %>
-        <div>
-            <h4><%= restaurant.name %></h4>
-            <img src="<%= restaurant.image %>">
+            <% restaurants.forEach(function(restaurant) { %>
+                <div class='rows__listing'>
+                    <h4><%= restaurant.name %></h4>
+                    <img src="<%= restaurant.image %>">
+                </div>
+                <% }) %>
         </div>
-    <% }) %>
-</div>
+    </div>
 
-<% include partials/footer.ejs %>
+    <% include partials/footer.ejs %>
