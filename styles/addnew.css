@@ -1,0 +1,30 @@
+h1 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+.newform__container {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.newform__input {
+    width: 99%;
+    height: 2em;
+    margin: 8px auto;
+}
+
+.newform__link {
+    margin-top: 12px;
+    float: left;
+    width: 22%;
+}
+
+.newform__button {
+    margin-top: 12px;
+    float: right;
+    width: 66%;
+}

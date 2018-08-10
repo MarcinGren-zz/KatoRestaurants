@@ -1,16 +1,19 @@
 <% include partials/header.ejs %>
 
-<link rel="stylesheet" href="/styles/main.css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/addnew.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
-<h1>Add a new restaurant</h1>
+    <h1>Add a new restaurant</h1>
 
-<form action="/restaurants" method="POST">
-    <input type="text" name="name" placeholder="name">
-    <input type="text" name="image" placeholder="image url">
-    <button type="submit">Add</button>
-</form>
+    <form class="newform" action="/restaurants" method="POST">
+        <div class="newform__container">
+            <input class="newform__input" type="text" name="name" placeholder="name">
+            <input class="newform__input" type="text" name="image" placeholder="image url">
+            <a class="button newform__link" href="/restaurants">Go back</a>
+            <button class="button newform__button" type="submit">Add</button>
+        </div>
+    </form>
 
-<a href="/restaurants">Go back</a>
 
-<% include partials/footer.ejs %>
+    <% include partials/footer.ejs %>
