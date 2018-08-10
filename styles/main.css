@@ -39,7 +39,6 @@ img {
 }
 
 .topnav a {
-    float: left;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
@@ -55,6 +54,14 @@ img {
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
+}
+
+.topnav__right {
+    float: right;
+}
+
+.topnav__left {
+    float: left;
 }
 
 .button {
