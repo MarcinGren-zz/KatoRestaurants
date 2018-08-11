@@ -1,1 +1,1 @@
-module.exports = {DB_PASSWORD: 'foobar'}
+module.exports = {DB_USERNAME: 'foobar', DB_PASSWORD: 'foobar'}

@@ -1,7 +1,10 @@
 var express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
-var dbPassword = require('./config')
+var dbConnection = require('./config')
+var mongoose = require('mongoose')
+
+mongoose.connect(`mongodb+srv://${dbConnection.DB_USERNAME}:<${dbConnection.DB_PASSWORD}>@cluster0-hxxzl.mongodb.net/cats?retryWrites=true`)
 
 var restaurants = [
     { name: 'Hurry Curry', image: 'https://media-cdn.tripadvisor.com/media/photo-s/04/c9/e3/e5/hurry-curry.jpg' },
@@ -39,5 +42,4 @@ app.get('/restaurants/new', function(req, res) {
 
 app.listen(8080, function() {
     console.log('App has started')
-    console.log(dbPassword.DB_PASSWORD)
 })
