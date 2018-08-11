@@ -4,7 +4,7 @@ var bodyParser = require('body-parser')
 var dbConnection = require('./config')
 var mongoose = require('mongoose')
 
-mongoose.connect(`mongodb+srv://${dbConnection.DB_USERNAME}:<${dbConnection.DB_PASSWORD}>@cluster0-hxxzl.mongodb.net/cats?retryWrites=true`)
+mongoose.connect(`mongodb+srv://${dbConnection.DB_USERNAME}:${dbConnection.DB_PASSWORD}@cluster0-hxxzl.mongodb.net/restaurants?retryWrites=true`)
 
 var restaurants = [
     { name: 'Hurry Curry', image: 'https://media-cdn.tripadvisor.com/media/photo-s/04/c9/e3/e5/hurry-curry.jpg' },
@@ -37,8 +37,6 @@ app.post('/restaurants', function(req, res) {
 app.get('/restaurants/new', function(req, res) {
     res.render('new.ejs')
 })
-
-
 
 app.listen(8080, function() {
     console.log('App has started')
