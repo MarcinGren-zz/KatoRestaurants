@@ -4,6 +4,16 @@ var bodyParser = require('body-parser')
 var dbConnection = require('./config')
 var mongoose = require('mongoose')
 
+function getRestaurants() {
+    Restaurant.find({}, function(err, rest) {
+        if (err) {
+            console.log('COULDNT OBTAIN RESTAURANTS')
+        } else {
+            restaurants = rest
+        }
+    })
+}
+
 mongoose.connect(`mongodb://${dbConnection.DB_USERNAME}:${dbConnection.DB_PASSWORD}@ds219532.mlab.com:19532/katorestaurants`)
 
 var restaurantSchema = new mongoose.Schema({
@@ -11,13 +21,7 @@ var restaurantSchema = new mongoose.Schema({
     image: String
 })
 var Restaurant = mongoose.model('Restaurant', restaurantSchema)
-
-var restaurants = [
-    { name: 'Hurry Curry', image: 'https://media-cdn.tripadvisor.com/media/photo-s/04/c9/e3/e5/hurry-curry.jpg' },
-    { name: 'Bujna', image:'https://scontent.cdninstagram.com/vp/a1b927db49a66d389ed5631e1a8cca78/5BBBCE7A/t51.2885-15/s640x640/sh0.08/e35/32321803_1054602141353815_5992938524339339264_n.jpg' },
-    { name: 'Mihiderka', image:'https://retailnet.pl/wp-content/uploads/2017/08/Mihiderka-w-Galerii-Katowickiej.jpg' },
-    { name: 'Novo', image:'http://katowice24.info/wp-content/uploads/2017/03/novo.jpg' }
-]
+getRestaurants()
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(__dirname + '/'))
@@ -27,6 +31,7 @@ app.get('/', function(req, res) {
 })
 
 app.get('/restaurants', function(req, res) {
+    getRestaurants()
     res.render('restaurants.ejs', {
         restaurants: restaurants
     })
@@ -57,5 +62,5 @@ app.get('/restaurants/new', function(req, res) {
 
 
 app.listen(8080, function() {
-    console.log('App has started')
+    console.log('App has started')    
 })
