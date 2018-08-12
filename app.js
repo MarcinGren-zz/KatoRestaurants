@@ -18,7 +18,8 @@ mongoose.connect(`mongodb://${dbConnection.DB_USERNAME}:${dbConnection.DB_PASSWO
 
 var restaurantSchema = new mongoose.Schema({
     name: String,
-    image: String
+    image: String,
+    description: String //not sure about this
 })
 var Restaurant = mongoose.model('Restaurant', restaurantSchema)
 
@@ -34,7 +35,7 @@ app.get('/restaurants', function (req, res) {
         if (err) {
             console.log('COULDNT OBTAIN RESTAURANTS')
         } else {
-            res.render('restaurants.ejs', {restaurants: allRestaurants})
+            res.render('restaurants-index.ejs', {restaurants: allRestaurants})
         }
     })
 })
@@ -44,7 +45,7 @@ app.post('/restaurants', function (req, res) {
     var image = req.body.image
     var newRestaurant = {
         name: name,
-        image: image
+        image: image,
     }
     Restaurant.create(newRestaurant, function (err) {
         console.log(err)
@@ -53,7 +54,11 @@ app.post('/restaurants', function (req, res) {
 })
 
 app.get('/restaurants/new', function (req, res) {
-    res.render('new.ejs')
+    res.render('restaurants-new.ejs')
+})
+
+app.get('/restaurants/:id', function(req, res) {
+    res.render('restaurants-show.ejs')
 })
 
 app.listen(8080, function () {
