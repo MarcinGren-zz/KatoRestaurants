@@ -4,15 +4,15 @@ const express       = require('express'),
       dbConnection  = require('./config'),
       mongoose      = require('mongoose')
 
-function getRestaurants() {
-    Restaurant.find({}, function (err, rest) {
-        if (err) {
-            console.log('COULDNT OBTAIN RESTAURANTS')
-        } else {
-            restaurants = rest
-        }
-    })
-}
+// function getRestaurants() {
+//     Restaurant.find({}, function (err, allRestaurants) {
+//         if (err) {
+//             console.log('COULDNT OBTAIN RESTAURANTS')
+//         } else {
+//             res.render('restaurants.ejs', {restaurants: allRestaurants})
+//         }
+//     })
+// }
 
 mongoose.connect(`mongodb://${dbConnection.DB_USERNAME}:${dbConnection.DB_PASSWORD}@ds219532.mlab.com:19532/katorestaurants`)
 
@@ -21,7 +21,6 @@ var restaurantSchema = new mongoose.Schema({
     image: String
 })
 var Restaurant = mongoose.model('Restaurant', restaurantSchema)
-getRestaurants()
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(__dirname + '/'))
@@ -30,15 +29,14 @@ app.get('/', function (req, res) {
     res.render('homepage.ejs')
 })
 
- //timeout doesnt work, need to find a way to wait until refresh as it refreshes before 
- //newly added restaurant can be saved onto db
 app.get('/restaurants', function (req, res) {
-    setTimeout(function () {
-        getRestaurants()
-        res.render('restaurants.ejs', {
-            restaurants: restaurants
-        })
-    }, 1000)
+    Restaurant.find({}, function (err, allRestaurants) {
+        if (err) {
+            console.log('COULDNT OBTAIN RESTAURANTS')
+        } else {
+            res.render('restaurants.ejs', {restaurants: allRestaurants})
+        }
+    })
 })
 
 app.post('/restaurants', function (req, res) {
