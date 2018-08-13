@@ -1,8 +1,6 @@
 <% include partials/header.ejs %>
-    <link rel="stylesheet" href="styles/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
-    <div class="container">
+    <div class="containers">
         <header class=hdr>
             <div class="container">
                 restaurants
@@ -13,7 +11,7 @@
             </div>
         </header>
 
-        <div class="rows">
+        <div class="container">
             <div class="rows__full-width">
                 <h3>Lovely restaurants</h3>
             </div>
@@ -24,10 +22,13 @@
                         <figcaption><%= restaurant.name %></figcaption>                        
                         <p><img src="<%= restaurant.image %>">
                     </figure>
+                    <a href="/restaurants/<%= restaurant._id %>"></a>
                 </div>
                 <% }) %>
         </div>
     </div>
+
+    <script type="text/javascript" src="/scripts.js"></script>
 
     <!-- <% include partials/footer.ejs %> -->
     <!-- disabled as its messed up atm -->

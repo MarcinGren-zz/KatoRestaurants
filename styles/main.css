@@ -51,6 +51,10 @@ img {
     border-radius: 25%;
 }
 
+.rows__listing:hover {
+    cursor: pointer;
+}
+
 figure {
     float: right;
     text-align: center;
