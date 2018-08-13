@@ -43,9 +43,11 @@ app.get('/restaurants', function (req, res) {
 app.post('/restaurants', function (req, res) {
     var name = req.body.name
     var image = req.body.image
+    var desc = req.body.description
     var newRestaurant = {
         name: name,
         image: image,
+        description: desc
     }
     Restaurant.create(newRestaurant, function (err) {
         console.log(err)
@@ -58,7 +60,13 @@ app.get('/restaurants/new', function (req, res) {
 })
 
 app.get('/restaurants/:id', function(req, res) {
-    res.render('restaurants-show.ejs')
+    Restaurant.findById(req.params.id, function(err, restaurantUsed) {
+        if (err) {
+            console.log(err)
+        } else {
+            res.render('restaurants-show.ejs', {restaurant: restaurantUsed})
+        }
+    })
 })
 
 app.listen(8080, function () {
