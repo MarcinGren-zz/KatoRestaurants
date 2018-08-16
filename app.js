@@ -3,7 +3,8 @@ const express       = require('express'),
       bodyParser    = require('body-parser'),
       dbConnection  = require('./config'),
       mongoose      = require('mongoose'),
-      Restaurant    = require('./models/restaurant')
+      Restaurant    = require('./models/restaurant'),
+      seedDb        = require('./seeds')
 
 // function getRestaurants() {
 //     Restaurant.find({}, function (err, allRestaurants) {
@@ -15,7 +16,12 @@ const express       = require('express'),
 //     })
 // }
 
-mongoose.connect(`mongodb://${dbConnection.DB_USERNAME}:${dbConnection.DB_PASSWORD}@ds219532.mlab.com:19532/katorestaurants`)
+// normal db
+// mongoose.connect(`mongodb://${dbConnection.DB_USERNAME}:${dbConnection.DB_PASSWORD}@ds219532.mlab.com:19532/katorestaurants`)
+
+// seed db
+seedDb()
+mongoose.connect(`mongodb://${dbConnection.DB_USERNAME}:${dbConnection.DB_PASSWORD}@ds029635.mlab.com:29635/seedkatorestaurants`)
 
 
 
