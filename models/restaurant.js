@@ -1,6 +1,6 @@
-var mongoose = require('mongoose')
+const mongoose = require('mongoose')
 
-var restaurantSchema = new mongoose.Schema({
+const restaurantSchema = new mongoose.Schema({
     name: String,
     image: String,
     description: String //not sure about this
