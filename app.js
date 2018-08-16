@@ -61,6 +61,7 @@ app.get('/restaurants/new', function (req, res) {
     res.render('restaurants-new.ejs')
 })
 
+// SHOW ROUTE
 app.get('/restaurants/:id', function(req, res) {
     Restaurant.findById(req.params.id, function(err, restaurantUsed) {
         if (err) {
