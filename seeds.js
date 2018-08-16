@@ -1,5 +1,6 @@
-const mongoose = require('mongoose')
-const Restaurant = require('./models/restaurant')
+const mongoose   = require('mongoose'),
+      Restaurant = require('./models/restaurant'),
+      Comment    = require('./models/comment')
 
 const data = [{
         name: "Hurry Curry",
@@ -27,11 +28,23 @@ function seedDB() {
         }
     })
     data.forEach(function (seed) {
-        Restaurant.create(seed, function (err, data) {
+        Restaurant.create(seed, function (err, restaurant) {
             if (err) {
                 console.log(err)
             } else {
                 console.log('added restaurant')
+                Comment.create({
+                    text: 'Nice place',
+                    author: 'Some dude'
+                }, function (err, comment) {
+                    if (err) {
+                        console.log(err)
+                    } else {
+                        restaurant.comments.push(comment)
+                        restaurant.save
+                        console.log('added comment')
+                    }
+                })
             }
         })
     })

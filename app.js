@@ -16,7 +16,7 @@ const express       = require('express'),
 //     })
 // }
 
-// normal db
+// normal db - Dont run seedDB() on this! - Gotta find a better way to handle this
 // mongoose.connect(`mongodb://${dbConnection.DB_USERNAME}:${dbConnection.DB_PASSWORD}@ds219532.mlab.com:19532/katorestaurants`)
 
 // seed db
