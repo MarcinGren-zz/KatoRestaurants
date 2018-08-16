@@ -2,7 +2,8 @@ const express       = require('express'),
       app           = express(),
       bodyParser    = require('body-parser'),
       dbConnection  = require('./config'),
-      mongoose      = require('mongoose')
+      mongoose      = require('mongoose'),
+      Restaurant    = require('./models/restaurant')
 
 // function getRestaurants() {
 //     Restaurant.find({}, function (err, allRestaurants) {
@@ -16,12 +17,7 @@ const express       = require('express'),
 
 mongoose.connect(`mongodb://${dbConnection.DB_USERNAME}:${dbConnection.DB_PASSWORD}@ds219532.mlab.com:19532/katorestaurants`)
 
-var restaurantSchema = new mongoose.Schema({
-    name: String,
-    image: String,
-    description: String //not sure about this
-})
-var Restaurant = mongoose.model('Restaurant', restaurantSchema)
+
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(__dirname + '/'))
