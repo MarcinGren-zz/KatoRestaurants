@@ -18,9 +18,9 @@
 
             <% restaurants.forEach(function(restaurant) { %>
                 <div class='rows__listing'>
-                    <figure>
+                    <figure class="rows__listing-figure">
                         <figcaption><%= restaurant.name %></figcaption>                        
-                        <p><img src="<%= restaurant.image %>">
+                        <p><img src="<%= restaurant.image %>"></p>
                     </figure>
                     <a href="/restaurants/<%= restaurant._id %>"></a>
                 </div>

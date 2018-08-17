@@ -15,7 +15,27 @@
       </div>
     </div>
     <div class="restaurant__main">
-      <div class="restaurant__photo"><img src="<%= restaurant.image %>"></div>
+
+      <div class="restaurant__images">
+        <div class="restaurant__image">
+          <figure class="restaurant__image-figure">
+            <figcaption>Photo</figcaption>
+            <img src="<%= restaurant.image %>">
+          </figure>
+        </div>
+        <div class="restaurant__image">
+          <figure class="restaurant__image-figure">
+            <figcaption>Menu</figcaption>
+            <img src="<%= restaurant.menu %>">
+          </figure>
+        </div>
+      </div>
+
+      <div class="restaurant__description">
+        <p>asd</p>
+
+      </div>
+
       <div class="restaurant__comments">BB
         <!-- TODO HERE -->
       </div>
@@ -23,8 +43,8 @@
 
     </div>
 
-
-    <!-- <p><%=restaurant.name %></p>
+  </div>
+  <!-- <p><%=restaurant.name %></p>
 
 <img src="<%= restaurant.image %>">
 

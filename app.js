@@ -53,9 +53,11 @@ app.post('/restaurants', function (req, res) {
     var name = req.body.name
     var image = req.body.image
     var desc = req.body.description
+    var menu = req.body.menu
     var newRestaurant = {
         name: name,
         image: image,
+        menu: menu,
         description: desc
     }
     Restaurant.create(newRestaurant, function (err) {

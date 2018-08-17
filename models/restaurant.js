@@ -4,6 +4,7 @@ const restaurantSchema = new mongoose.Schema({
     name: String,
     image: String,
     description: String, //not sure about this
+    menu: String,
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comment'

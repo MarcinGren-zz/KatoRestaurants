@@ -8,7 +8,7 @@ body {
     padding-left: 5%;
     margin-right: auto;
     margin-left: auto;
-  }
+}
 
 img {
     object-fit: fill;
@@ -55,7 +55,7 @@ img {
     cursor: pointer;
 }
 
-figure {
+.rows__listing-figure {
     float: right;
     text-align: center;
     font-style: italic;
@@ -64,7 +64,7 @@ figure {
     border: thin solid silver;
     margin: 0.5em;
     padding: 0.5em;
-  }
+}
 
 figcaption {
     font-weight: bold;
