@@ -1,7 +1,31 @@
 <% include partials/header.ejs %>
 
+  <link rel="stylesheet" href="/styles/restaurants-show.css">
 
-<p><%=restaurant.name %></p>
+  <div class="restaurant">
+    <div class="restaurant__leftpanel">
+      <p class="restaurant__name">NAME</p>
+      <div class="restaurant__categories">
+        <ul class="restaurant__categories-listcontainer">
+          <li class="restaurant__categories-listitem">DIETARY</li>
+          <li class="restaurant__categories-listitem">ALCO, PETS</li>
+          <li class="restaurant__categories-listitem">OTHER</li>
+        </ul>
+        <div class="restaurant__map"></div>
+      </div>
+
+      <div class="restaurant__main">
+        <div class="restaurant__photo"></div>
+        <div class="restaurant__comments">
+          <!-- TODO HERE -->
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <!-- <p><%=restaurant.name %></p>
 
 <img src="<%= restaurant.image %>">
 
@@ -16,6 +40,9 @@
 
 <p>
   <a class="button" href="/restaurants/<%= restaurant._id %>/comments/new">Add New Comment</a>
-</p>
+</p> -->
 
-<% include partials/footer.ejs %>
+
+
+  </div>
+  <% include partials/footer.ejs %>
