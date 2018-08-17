@@ -15,6 +15,18 @@ const data = [{
         description: "foobar"
     },
     {
+        name: "Fabryka Kurtosza 2",
+        image: "https://s.inyourpocket.com/gallery/183322.jpg",
+        menu: "http://lgucma.ayz.pl/wp-content/uploads/2016/03/23.jpg",
+        description: "foobar"
+    },
+    {
+        name: "Fabryka Kurtosza 2",
+        image: "https://s.inyourpocket.com/gallery/183322.jpg",
+        menu: "http://lgucma.ayz.pl/wp-content/uploads/2016/03/23.jpg",
+        description: "foobar"
+    },
+    {
         name: "Fabryka Kurtosza 3",
         image: "https://s.inyourpocket.com/gallery/183322.jpg",
         menu: "http://lgucma.ayz.pl/wp-content/uploads/2016/03/23.jpg",
