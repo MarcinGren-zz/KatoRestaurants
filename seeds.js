@@ -3,18 +3,21 @@ const mongoose = require('mongoose'),
     Comment =    require('./models/comment')
 
 const data = [{
-        name: "Hurry Curry",
-        image: "https://media-cdn.tripadvisor.com/media/photo-s/04/c9/e3/e5/hurry-curry.jpg",
+        name: "Fabryka Kurtosza",
+        image: "https://s.inyourpocket.com/gallery/183322.jpg",
+        menu: "http://lgucma.ayz.pl/wp-content/uploads/2016/03/23.jpg",
         description: "foobar"
     },
     {
-        name: "Hurry Curry 2",
-        image: "https://media-cdn.tripadvisor.com/media/photo-s/04/c9/e3/e5/hurry-curry.jpg",
+        name: "Fabryka Kurtosza 2",
+        image: "https://s.inyourpocket.com/gallery/183322.jpg",
+        menu: "http://lgucma.ayz.pl/wp-content/uploads/2016/03/23.jpg",
         description: "foobar"
     },
     {
-        name: "Hurry Curry 3",
-        image: "https://media-cdn.tripadvisor.com/media/photo-s/04/c9/e3/e5/hurry-curry.jpg",
+        name: "Fabryka Kurtosza 3",
+        image: "https://s.inyourpocket.com/gallery/183322.jpg",
+        menu: "http://lgucma.ayz.pl/wp-content/uploads/2016/03/23.jpg",
         description: "foobar"
     }
 ]

@@ -1,3 +1,27 @@
-body {
-    background: green;
+.restaurant {
+    background-color: red;
+    display: flex;
+}
+
+.restaurant__leftpanel {
+    background-color: green;
+    float: left;
+    width: 35%;
+}
+
+.restaurant__main {
+    background-color: yellow;
+    width: 100%;
+}
+
+.restaurant__photo {
+    background-color: purple;
+}
+
+.restaurant__photo img {
+    width: 50%;
+}
+
+.restaurant__comments {
+    background-color: brown;
 }
