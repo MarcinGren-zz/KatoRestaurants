@@ -1,7 +1,7 @@
 <% include partials/header.ejs %>
 
 
-<p><%=restaurant.name%></p>
+<p><%=restaurant.name %></p>
 
 <img src="<%= restaurant.image %>">
 
@@ -9,6 +9,13 @@
 
 <div>
     <p>comments</p>
-   <%= restaurant.comments %>
+    <p><%=restaurant%></p>
+    <p><%=restaurant.comments%></p>
+    <p><%=restaurant.comments[0]%></p>
+    <p><%=restaurant.comments[0].text%></p>
+   <% restaurant.comments.forEach(function(comment) { %>
+    <% console.log('asd') %>
+  <% }) %>
+  
 </div>
 <% include partials/footer.ejs %>

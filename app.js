@@ -63,7 +63,7 @@ app.get('/restaurants/new', function (req, res) {
 
 // SHOW ROUTE
 app.get('/restaurants/:id', function(req, res) {
-    Restaurant.findById(req.params.id, function(err, restaurantUsed) {
+    Restaurant.findById(req.params.id).populate('comments').exec(function(err, restaurantUsed) {
         if (err) {
             console.log(err)
         } else {

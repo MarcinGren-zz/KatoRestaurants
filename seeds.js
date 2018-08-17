@@ -1,6 +1,6 @@
-const mongoose   = require('mongoose'),
-      Restaurant = require('./models/restaurant'),
-      Comment    = require('./models/comment')
+const mongoose = require('mongoose'),
+    Restaurant = require('./models/restaurant'),
+    Comment =    require('./models/comment')
 
 const data = [{
         name: "Hurry Curry",
@@ -8,12 +8,12 @@ const data = [{
         description: "foobar"
     },
     {
-        name: "Hurry Curry",
+        name: "Hurry Curry 2",
         image: "https://media-cdn.tripadvisor.com/media/photo-s/04/c9/e3/e5/hurry-curry.jpg",
         description: "foobar"
     },
     {
-        name: "Hurry Curry",
+        name: "Hurry Curry 3",
         image: "https://media-cdn.tripadvisor.com/media/photo-s/04/c9/e3/e5/hurry-curry.jpg",
         description: "foobar"
     }
@@ -41,7 +41,7 @@ function seedDB() {
                         console.log(err)
                     } else {
                         restaurant.comments.push(comment)
-                        restaurant.save
+                        restaurant.save()
                         console.log('added comment')
                     }
                 })
@@ -49,5 +49,9 @@ function seedDB() {
         })
     })
 }
+
+// Restaurant.findOne({name: 'Hurry Curry'}).populate('comments').exec(function(err, restaurant) {
+//     console.log(restaurant)
+// })
 
 module.exports = seedDB
