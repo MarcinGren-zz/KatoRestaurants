@@ -9,12 +9,8 @@
 
 <div>
     <p>comments</p>
-    <p><%=restaurant%></p>
-    <p><%=restaurant.comments%></p>
-    <p><%=restaurant.comments[0]%></p>
-    <p><%=restaurant.comments[0].text%></p>
    <% restaurant.comments.forEach(function(comment) { %>
-    <% console.log('asd') %>
+    <p><em><%= comment.text %></em> by <%= comment.author %></p>
   <% }) %>
   
 </div>

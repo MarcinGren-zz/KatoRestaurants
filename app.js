@@ -32,6 +32,7 @@ app.get('/', function (req, res) {
     res.render('homepage.ejs')
 })
 
+// INDEX ROUTE
 app.get('/restaurants', function (req, res) {
     Restaurant.find({}, function (err, allRestaurants) {
         if (err) {
@@ -42,6 +43,7 @@ app.get('/restaurants', function (req, res) {
     })
 })
 
+// CREATE ROUTE
 app.post('/restaurants', function (req, res) {
     var name = req.body.name
     var image = req.body.image
@@ -57,6 +59,7 @@ app.post('/restaurants', function (req, res) {
     res.redirect('/restaurants')
 })
 
+// NEW ROUTE
 app.get('/restaurants/new', function (req, res) {
     res.render('restaurants-new.ejs')
 })
@@ -71,6 +74,14 @@ app.get('/restaurants/:id', function(req, res) {
         }
     })
 })
+
+// COMMENTS NEW ROUTE - restrautants/:id/comments/new   GET
+app.get('/restaurants/:id/comments/new', function(req, res) {
+    Restaurant.findById(req.params.id, function(err, restaurantUsed) {
+        res.render('comments-new.ejs', {restaurant: restaurantUsed})
+    })
+})
+// COMMENTS CREATE ROUTE - restrautants/:id/comments    POST
 
 app.listen(8080, function () {
     console.log('App has started')
