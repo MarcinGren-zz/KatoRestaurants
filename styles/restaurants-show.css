@@ -3,10 +3,49 @@
     display: flex;
 }
 
-.restaurant__leftpanel {
+.restaurant__leftcontainer {
     background-color: green;
     float: left;
-    width: 35%;
+    width: 55%;
+}
+
+.restaurant__leftpanel {
+    background-color: gold;
+    float: right;
+    width: 80%;
+    margin: 10%;
+}
+
+.restaurant__name {
+    background-color: greenyellow;
+    font-size: 1.5em;
+}
+
+.restaurant__categories {
+    background-color: aquamarine;
+}
+
+.restaurant__map {
+    background-color: burlywood;
+    overflow: hidden;
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.restaurant__map iframe {
+    position: absolute;
+    border: 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.restaurant__rightcontainer {
+    background-color: palevioletred;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .restaurant__main {
@@ -25,6 +64,7 @@
     margin: 1.66%;
     border-radius: 25%;
     padding: 3%;
+    width: 40%;
 }
 
 .restaurant__image-figure {

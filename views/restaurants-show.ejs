@@ -3,31 +3,39 @@
   <link rel="stylesheet" href="/styles/restaurants-show.css">
 
   <div class="restaurant">
-    <div class="restaurant__leftpanel">
-      <p class="restaurant__name">NAME</p>
-      <div class="restaurant__categories">
-        <ul class="restaurant__categories-listcontainer">
-          <li class="restaurant__categories-listitem">DIETARY</li>
-          <li class="restaurant__categories-listitem">INFO</li>
-          <li class="restaurant__categories-listitem">OTHER</li>
-        </ul>
-        <div class="restaurant__map"></div>
+    <div class="restaurant__leftcontainer">
+      <div class="restaurant__leftpanel">
+        <p class="restaurant__name"><%=restaurant.name %></p>
+        <div class="restaurant__categories">
+          <ul class="restaurant__categories-listcontainer">
+            <li class="restaurant__categories-listitem">VEGETARIAN</li>
+            <li class="restaurant__categories-listitem">DELIVERY</li>
+            <li class="restaurant__categories-listitem">COFFEE</li>
+          </ul>
+        </div>
+        <div class="restaurant__map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2550.7945704406297!2d19.022292117337!3d50.25842095888756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce362ef81d2f%3A0x213565b9d5246d2d!2sFabryka+kurtosza!5e0!3m2!1sen!2spl!4v1534535549325"
+            width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
-    <div class="restaurant__main">
 
-      <div class="restaurant__images">
-        <div class="restaurant__image">
-          <figure class="restaurant__image-figure">
-            <figcaption>Photo</figcaption>
-            <img src="<%= restaurant.image %>">
-          </figure>
-        </div>
-        <div class="restaurant__image">
-          <figure class="restaurant__image-figure">
-            <figcaption>Menu</figcaption>
-            <img src="<%= restaurant.menu %>">
-          </figure>
+
+    <div class="restaurant__rightcontainer">
+      <div class="restaurant__main">
+        <div class="restaurant__images">
+          <div class="restaurant__image">
+            <figure class="restaurant__image-figure">
+              <figcaption>Photo</figcaption>
+              <img src="<%= restaurant.image %>">
+            </figure>
+          </div>
+          <div class="restaurant__image">
+            <figure class="restaurant__image-figure">
+              <figcaption>Menu</figcaption>
+              <img src="<%= restaurant.menu %>">
+            </figure>
+          </div>
         </div>
       </div>
 
