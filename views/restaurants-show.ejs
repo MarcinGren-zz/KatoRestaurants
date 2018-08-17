@@ -12,6 +12,10 @@
    <% restaurant.comments.forEach(function(comment) { %>
     <p><em><%= comment.text %></em> by <%= comment.author %></p>
   <% }) %>
-  
 </div>
+
+<p>
+  <a class="button" href="/restaurants/<%= restaurant._id %>/comments/new">Add New Comment</a>
+</p>
+
 <% include partials/footer.ejs %>

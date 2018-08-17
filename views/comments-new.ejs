@@ -6,10 +6,10 @@
 
     <h1>Add a new comment</h1>
 
-    <form class="newform" action="/restaurants/<%= restaurant %>/comments" method="POST">
+    <form class="newform" action="/restaurants/<%= restaurant._id %>/comments" method="POST">
         <div class="newform__container">
-            <input class="newform__input" type="text" name="text" placeholder="comment">
-            <input class="newform__input" type="text" name="author" placeholder="author">
+            <input class="newform__input" type="text" name="comment[text]" placeholder="comment">
+            <input class="newform__input" type="text" name="comment[author]" placeholder="author">
             <a class="button newform__link" href="/restaurants">Go back</a>
             <button class="button newform__button" type="submit">Add</button>
         </div>

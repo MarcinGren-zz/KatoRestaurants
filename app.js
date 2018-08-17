@@ -1,10 +1,11 @@
-const express       = require('express'),
-      app           = express(),
-      bodyParser    = require('body-parser'),
-      dbConnection  = require('./config'),
-      mongoose      = require('mongoose'),
-      Restaurant    = require('./models/restaurant'),
-      seedDb        = require('./seeds')
+const express = require('express'),
+    app = express(),
+    bodyParser = require('body-parser'),
+    dbConnection = require('./config'),
+    mongoose = require('mongoose'),
+    Restaurant = require('./models/restaurant'),
+    Comment = require('./models/comment'),
+    seedDb = require('./seeds')
 
 // function getRestaurants() {
 //     Restaurant.find({}, function (err, allRestaurants) {
@@ -25,7 +26,9 @@ mongoose.connect(`mongodb://${dbConnection.DB_USERNAME}:${dbConnection.DB_PASSWO
 
 
 
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
 app.use(express.static(__dirname + '/'))
 
 app.get('/', function (req, res) {
@@ -38,7 +41,9 @@ app.get('/restaurants', function (req, res) {
         if (err) {
             console.log('COULDNT OBTAIN RESTAURANTS')
         } else {
-            res.render('restaurants-index.ejs', {restaurants: allRestaurants})
+            res.render('restaurants-index.ejs', {
+                restaurants: allRestaurants
+            })
         }
     })
 })
@@ -65,23 +70,40 @@ app.get('/restaurants/new', function (req, res) {
 })
 
 // SHOW ROUTE
-app.get('/restaurants/:id', function(req, res) {
-    Restaurant.findById(req.params.id).populate('comments').exec(function(err, restaurantUsed) {
+app.get('/restaurants/:id', function (req, res) {
+    Restaurant.findById(req.params.id).populate('comments').exec(function (err, restaurantUsed) {
         if (err) {
             console.log(err)
         } else {
-            res.render('restaurants-show.ejs', {restaurant: restaurantUsed})
+            res.render('restaurants-show.ejs', {
+                restaurant: restaurantUsed
+            })
         }
     })
 })
 
 // COMMENTS NEW ROUTE - restrautants/:id/comments/new   GET
-app.get('/restaurants/:id/comments/new', function(req, res) {
-    Restaurant.findById(req.params.id, function(err, restaurantUsed) {
-        res.render('comments-new.ejs', {restaurant: restaurantUsed})
+app.get('/restaurants/:id/comments/new', function (req, res) {
+    Restaurant.findById(req.params.id, function (err, restaurantUsed) {
+        res.render('comments-new.ejs', {
+            restaurant: restaurantUsed
+        })
     })
 })
 // COMMENTS CREATE ROUTE - restrautants/:id/comments    POST
+app.post('/restaurants/:id/comments', function (req, res) {
+    Restaurant.findById(req.params.id, function (err, restaurant) {
+        Comment.create(req.body.comment, function (err, commentCreated) { // Do the same above for restaurant
+            if (err) {
+                console.log(err)
+            } else {
+                restaurant.comments.push(commentCreated)
+                restaurant.save()
+                res.redirect('/restaurants/' + restaurant._id)
+            }
+        })
+    })
+})
 
 app.listen(8080, function () {
     console.log('App has started')
