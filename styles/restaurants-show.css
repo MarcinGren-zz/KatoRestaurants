@@ -1,35 +1,41 @@
 .restaurant {
-    background-color: red;
     display: flex;
+    background-image: url("https://images.pexels.com/photos/257794/pexels-photo-257794.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover;
 }
 
 .restaurant__leftcontainer {
-    background-color: green;
     float: left;
     width: 55%;
 }
 
 .restaurant__leftpanel {
-    background-color: gold;
     float: right;
     width: 80%;
-    margin: 10%;
+    margin-right: 10%;
 }
 
 .restaurant__name {
-    background-color: greenyellow;
-    font-size: 1.5em;
+    font-weight: 700;
+    font-size: 2.5em;
+    font-style: italic;
 }
 
 .restaurant__categories {
-    background-color: aquamarine;
+    margin: 40px 0px;
+}
+
+.restaurant__categories li {
+    list-style-type: none;
+    margin: 15px 0px;
+    font: ultra-condensed italic small-caps 33px Georgia, sans-serif;
 }
 
 .restaurant__map {
-    background-color: burlywood;
     overflow: hidden;
     position: relative;
     padding-top: 56.25%;
+    height: 100px;
 }
 
 .restaurant__map iframe {
@@ -42,22 +48,18 @@
 }
 
 .restaurant__rightcontainer {
-    background-color: palevioletred;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .restaurant__main {
-    background-color: yellow;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.restaurant__images {
-    background-color: purple;
-}
+.restaurant__images {}
 
 .restaurant__image {
     float: left;
@@ -77,10 +79,6 @@
     padding: 0.5em;
 }
 
-.restaurant__description {
-    background-color: teal;
-}
+.restaurant__description {}
 
-.restaurant__comments {
-    background-color: brown;
-}
+.restaurant__comments {}

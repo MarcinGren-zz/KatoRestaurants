@@ -56,6 +56,11 @@ function seedDB() {
                         console.log(err)
                     } else {
                         restaurant.comments.push(comment)
+                        restaurant.comments.push(comment)
+                        restaurant.comments.push(comment)
+                        restaurant.comments.push(comment)
+                        restaurant.comments.push(comment)
+                        restaurant.comments.push(comment)
                         restaurant.save()
                         console.log('added comment')
                     }
