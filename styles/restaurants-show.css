@@ -57,6 +57,7 @@
 
 .restaurant__main {
     width: 90%;
+    height: calc(100% - 40px);
     display: flex;
     flex-direction: column;
 }
@@ -99,8 +100,15 @@
 }
 
 .restaurant__description {
-    font-size: 1.5em;
-    background-color: rgba(192, 192, 192, 0.3)
+    font-size: 1.4em;
+    background-color: rgba(192, 192, 192, 0.6);
+    color: navy;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    padding-left: 5px;
+}
+
+.restaurant__description-name {
+    font-size: 1.2em;
 }
 
 .restaurant__rightcontainer b {
@@ -109,5 +117,12 @@
 
 .restaurant__comments {
     font-size: 1.2em;
-    background-color: rgba(192, 192, 192, 0.2)
+    background-color: rgba(192, 192, 192, 0.5);
+    color: navy;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    padding-left: 5px;
+}
+
+.restaurant__comments-name {
+    font-size: 1.2em;
 }
