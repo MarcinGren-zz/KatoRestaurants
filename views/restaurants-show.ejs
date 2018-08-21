@@ -1,7 +1,9 @@
 <% include partials/header.ejs %>
 
   <link rel="stylesheet" href="/styles/restaurants-show.css">
+  <link rel="stylesheet" href="/styles/restaurants-new.css">
 
+  <div>
   <div class="restaurant">
     <div class="restaurant__leftcontainer">
       <div class="restaurant__leftpanel">
@@ -17,6 +19,17 @@
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2550.7945704406297!2d19.022292117337!3d50.25842095888756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce362ef81d2f%3A0x213565b9d5246d2d!2sFabryka+kurtosza!5e0!3m2!1sen!2spl!4v1534535549325"
             width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
+
+        <form class="newcomment" action="/restaurants/<%= restaurant._id %>/comments" method="POST">
+          <div class="newcomment__container">
+              <input class="newcomment__input" type="text" name="comment[text]" placeholder="comment">
+              <input class="newcomment__input" type="text" name="comment[author]" placeholder="author">
+              <a class="button newcomment__link" href="/restaurants">Go back</a>
+              <button class="button newcomment__button" type="submit">Add</button>
+          </div>
+      </form>
+
+
       </div>
     </div>
 
@@ -78,4 +91,8 @@
 
 
   </div>
+
+  
+  <script type="text/javascript" src="/scripts/restaurant-show.js"></script>
+
   <% include partials/footer.ejs %>

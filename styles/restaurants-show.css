@@ -4,6 +4,10 @@
     background-size: cover;
 }
 
+.restaurant__darkeroverlay {
+    background-color: rgba(0, 0, 0, 0.5);    
+}
+
 .restaurant__leftcontainer {
     float: left;
     width: 55%;
@@ -47,6 +51,35 @@
     width: 100%;
     left: 0;
     top: 0;
+}
+
+form {
+    text-align: center;
+}
+
+.newcomment__container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.newcomment__input {
+    width: 99%;
+    height: 2em;
+    margin: 8px auto;
+    box-shadow: 0px 0px 0px 0px rgba(97,94,131,0.25);
+    text-align: center;
+}
+
+.newcomment__link {
+    margin-top: 12px;
+    float: left;
+    width: 22%;
+}
+
+.newcomment__button {
+    margin-top: 12px;
+    float: right;
+    width: 66%;
 }
 
 .restaurant__rightcontainer {
@@ -94,13 +127,22 @@
     font-size: 1.2em;
 }
 
+.restaurant__image-focus {
+    transform: scale(2.5);
+    position: absolute;
+    left: 40%;
+    top: 40%;
+}
+
 .restaurant__bottomsection {
     width: 90%;
     float: left;
 }
 
 .restaurant__description {
-    font-size: 1.4em;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: bold;
     background-color: rgba(192, 192, 192, 0.6);
     color: navy;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -116,7 +158,8 @@
 }
 
 .restaurant__comments {
-    font-size: 1.2em;
+    font-weight: bold;
+    font-size: 1.1em;
     background-color: rgba(192, 192, 192, 0.5);
     color: navy;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
