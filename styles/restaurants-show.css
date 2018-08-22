@@ -6,6 +6,7 @@ body {
     height: 700px;
     width: 100%;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .restaurant__topimage {
@@ -41,7 +42,6 @@ body {
     flex-direction: row;
     font-size: 1.2em;
     margin-top: 50px;
-    margin-bottom: 50px;
 }
 
 .restaurant__secondblank-firstblock {
@@ -89,12 +89,57 @@ body {
 
 .restaurant__bottomimage {
     display: flex;
+    flex-direction: column;
+}
+
+.restaurant__bottomimage-food,
+.restaurant__bottomimage-drinks {
+    display: flex;
     flex-direction: row;
+    justify-content: space-around;
+}
+
+.restaurant__bottomimage-foodtext,
+.restaurant__bottomimage-drinkstext {
+    width: 30%;
+    margin: auto auto;
+    font-size: 1.6em;
+    text-align: center;
+    border-bottom: 5px solid black;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
+.restaurant__image-container {
+    width: 30%;
+}
+
+.right {
+    float: right;
+}
+
+.menuimage {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+
+.menuimage:hover {
+    transform: scale(1.5)
 }
 
 .restaurant__bottomimage-menu1 {
-    background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/35151615_1793687987364122_7124972108337119232_n.jpg?_nc_cat=0&oh=8425569fc029669dca8d9b9fe7068883&oe=5BEDF634")
+    background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/35151615_1793687987364122_7124972108337119232_n.jpg?_nc_cat=0&oh=8425569fc029669dca8d9b9fe7068883&oe=5BEDF634");
 }
+
 .restaurant__bottomimage-menu2 {
-    background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/35199072_1793687944030793_6904130215736246272_n.jpg?_nc_cat=0&oh=ab1453af6119c4b322f86714be8bb01c&oe=5C0C009D")
+    background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/35199072_1793687944030793_6904130215736246272_n.jpg?_nc_cat=0&oh=ab1453af6119c4b322f86714be8bb01c&oe=5C0C009D");
+}
+
+.restaurant__bottomimage-menu3 {
+    background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/35144972_1793687937364127_2161339800907415552_n.jpg?_nc_cat=0&oh=ad1b4f2d6132265c18b02573ae65ccaf&oe=5C08F436");
+}
+
+.restaurant__bottomimage-menu4 {
+    background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/35236967_1793687907364130_2594427763116998656_n.jpg?_nc_cat=0&oh=3700b2c817e207ebba261cf77a0864fb&oe=5C024E4F");
 }
