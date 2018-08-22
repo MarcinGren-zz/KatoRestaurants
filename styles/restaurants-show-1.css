@@ -1,0 +1,171 @@
+.restaurant {
+    display: flex;
+    background-image: url("https://images.pexels.com/photos/257794/pexels-photo-257794.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover;
+}
+
+.restaurant__darkeroverlay {
+    background-color: rgba(0, 0, 0, 0.5);    
+}
+
+.restaurant__leftcontainer {
+    float: left;
+    width: 55%;
+}
+
+.restaurant__leftpanel {
+    float: right;
+    width: 80%;
+    margin-right: 10%;
+}
+
+.restaurant__name {
+    font-weight: 700;
+    font-size: 2.5em;
+    font-style: italic;
+    color: gainsboro;
+}
+
+.restaurant__categories {
+    margin: 40px 0px;
+}
+
+.restaurant__categories li {
+    list-style-type: none;
+    margin: 15px 0px;
+    font: ultra-condensed italic small-caps 33px Georgia, sans-serif;
+    color: gainsboro;
+}
+
+.restaurant__map {
+    overflow: hidden;
+    position: relative;
+    padding-top: 56.25%;
+    height: 100px;
+}
+
+.restaurant__map iframe {
+    position: absolute;
+    border: 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+form {
+    text-align: center;
+}
+
+.newcomment__container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.newcomment__input {
+    width: 99%;
+    height: 2em;
+    margin: 8px auto;
+    box-shadow: 0px 0px 0px 0px rgba(97,94,131,0.25);
+    text-align: center;
+}
+
+.newcomment__link {
+    margin-top: 12px;
+    float: left;
+    width: 22%;
+}
+
+.newcomment__button {
+    margin-top: 12px;
+    float: right;
+    width: 66%;
+}
+
+.restaurant__rightcontainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.restaurant__main {
+    width: 90%;
+    height: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+}
+
+.restaurant__images {}
+
+.restaurant__image {
+    float: left;
+    margin: 1.66%;
+    border-radius: 25%;
+    padding: 3%;
+    width: 40%;
+}
+
+.restaurant__image-figure {
+    text-align: center;
+    font-style: italic;
+    text-indent: 0;
+    border: 2px solid rgba(192, 192, 192, 0.4);
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+.restaurant__image-figure.first {
+    float: right;
+    
+}
+.restaurant__image-figure.second {
+    float: left;
+}
+
+.restaurant__image-figure figcaption {
+    color: lightgoldenrodyellow;
+    font-size: 1.2em;
+}
+
+.restaurant__image-focus {
+    transform: scale(2.5);
+    position: absolute;
+    left: 40%;
+    top: 40%;
+}
+
+.restaurant__bottomsection {
+    width: 90%;
+    float: left;
+}
+
+.restaurant__description {
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: bold;
+    background-color: rgba(192, 192, 192, 0.6);
+    color: navy;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    padding-left: 5px;
+}
+
+.restaurant__description-name {
+    font-size: 1.2em;
+}
+
+.restaurant__rightcontainer b {
+    height: 30px;
+}
+
+.restaurant__comments {
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: rgba(192, 192, 192, 0.5);
+    color: navy;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    padding-left: 5px;
+}
+
+.restaurant__comments-name {
+    font-size: 1.2em;
+}
