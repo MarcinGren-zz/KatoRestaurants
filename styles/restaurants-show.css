@@ -1,27 +1,100 @@
-.restaurant__topimage {
+body {
+    background-color: rgba(190, 190, 190, 0.15);
+}
+
+.bigimages {
     height: 700px;
     width: 100%;
     background-size: cover;
-    background-color: orange;
+}
+
+.restaurant__topimage {
+    background-image: url("https://www.slaskie.travel/Media/Default/.MainStorage/ContentItemDocumentTypeRecord/knuefzjs.z4w/3%20siostry.jpg")
 }
 
 .restaurant__firstblank {
-    height: 400px;
+    height: 500px;
 }
 
 .restaurant__firstblank-textcontainer {
-    width: 40%;
+    width: 50%;
     margin: auto auto;
     text-align: center;
-    line-height: 400px;
+    line-height: 500px;
 }
 
 .restaurant__firstblank-text {
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
+    letter-spacing: 2px;
+    font-size: 1.3em;
 }
 
 .restaurant__middleimage {
-    background-color: pink;
+    background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/33660416_1778758922190362_5038691327693291520_n.jpg?_nc_cat=0&oh=839b08d5a9f51c87c3ef85af05979a99&oe=5BF4D693")
+}
+
+.restaurant__secondblank {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2em;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.restaurant__secondblank-firstblock {
+    margin-left: 10%;
+    width: 30%;
+}
+
+.restaurant__secondblank-secondblock {
+    width: 25%;
+}
+
+.restaurant__secondblank-firstblockcontainer,
+.restaurant__secondblank-secondblockcontainer {
+    width: 80%;
+}
+
+.restaurant__secondblank-thirdblock {
+    width: 25%;
+    margin-right: 10%;
+}
+
+.restaurant__secondblank-thirdblockcontainer {
+    height: 100%;
+    width: 100%;
+}
+
+.restaurant__secondblank-textheader {
+    border-bottom: 3px solid black;
+}
+
+.restaurant__secondblank-map {
+    width: 100%;
+    height: 100%;
+}
+
+.fab,
+.fas {
+    font-size: 1.6em;
+}
+
+.fa-instagram,
+.fa-location-arrow {
+    padding-left: 10px;
+}
+
+.restaurant__bottomimage {
+    display: flex;
+    flex-direction: row;
+}
+
+.restaurant__bottomimage-menu1 {
+    background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/35151615_1793687987364122_7124972108337119232_n.jpg?_nc_cat=0&oh=8425569fc029669dca8d9b9fe7068883&oe=5BEDF634")
+}
+.restaurant__bottomimage-menu2 {
+    background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/35199072_1793687944030793_6904130215736246272_n.jpg?_nc_cat=0&oh=ab1453af6119c4b322f86714be8bb01c&oe=5C0C009D")
 }
