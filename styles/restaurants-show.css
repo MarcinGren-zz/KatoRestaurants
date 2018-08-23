@@ -18,10 +18,17 @@ body {
 }
 
 .firstspace__textcontainer {
-    width: 55%;
+    width: 60%;
     margin: auto auto;
     text-align: center;
     line-height: 500px;
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 600px) {
+    .firstspace__textcontainer {
+        font-size: 0.8em;
+    }
 }
 
 .firstspace__text {
@@ -57,8 +64,7 @@ body {
     border-bottom: 3px solid black;
 }
 
-.secondspace__firstblockcontainer,
-.secondspace__secondblockcontainer {
+.secondspace__firstblockcontainer, .secondspace__secondblockcontainer {
     width: 80%;
 }
 
@@ -72,13 +78,11 @@ body {
     width: 100%;
 }
 
-.fab,
-.fas {
+.fab, .fas {
     font-size: 1.6em;
 }
 
-.fa-instagram,
-.fa-location-arrow {
+.fa-instagram, .fa-location-arrow {
     padding-left: 10px;
 }
 
@@ -87,15 +91,13 @@ body {
     flex-direction: column;
 }
 
-.bottomsection__food,
-.bottomsection__drinks {
+.bottomsection__food, .bottomsection__drinks {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-.bottomsection__foodtext,
-.bottomsection__drinkstext {
+.bottomsection__foodtext, .bottomsection__drinkstext {
     width: 30%;
     margin: auto auto;
     font-size: 1.6em;
