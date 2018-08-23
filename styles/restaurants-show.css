@@ -13,18 +13,18 @@ body {
     background-image: url("https://www.slaskie.travel/Media/Default/.MainStorage/ContentItemDocumentTypeRecord/knuefzjs.z4w/3%20siostry.jpg")
 }
 
-.restaurant__firstblank {
+.firstspace {
     height: 500px;
 }
 
-.restaurant__firstblank-textcontainer {
+.firstspace__textcontainer {
     width: 55%;
     margin: auto auto;
     text-align: center;
     line-height: 500px;
 }
 
-.restaurant__firstblank-text {
+.firstspace__text {
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
@@ -36,7 +36,7 @@ body {
     background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/33660416_1778758922190362_5038691327693291520_n.jpg?_nc_cat=0&oh=839b08d5a9f51c87c3ef85af05979a99&oe=5BF4D693")
 }
 
-.restaurant__secondblank {
+.secondspace {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -44,32 +44,32 @@ body {
     margin-top: 50px;
 }
 
-.restaurant__secondblank-firstblock {
+.secondspace__firstblock {
     margin-left: 10%;
     width: 30%;
 }
 
-.restaurant__secondblank-secondblock {
+.secondspace__secondblock {
     width: 25%;
 }
 
-.restaurant__secondblank-firstblockcontainer,
-.restaurant__secondblank-secondblockcontainer {
+.secondspace__textheader {
+    border-bottom: 3px solid black;
+}
+
+.secondspace__firstblockcontainer,
+.secondspace__secondblockcontainer {
     width: 80%;
 }
 
-.restaurant__secondblank-thirdblock {
+.secondspace__thirdblock {
     width: 25%;
     margin-right: 10%;
 }
 
-.restaurant__secondblank-thirdblockcontainer {
+.secondspace__thirdblockcontainer {
     height: 100%;
     width: 100%;
-}
-
-.restaurant__secondblank-textheader {
-    border-bottom: 3px solid black;
 }
 
 .fab,
@@ -82,20 +82,20 @@ body {
     padding-left: 10px;
 }
 
-.restaurant__bottomimage {
+.bottomsection {
     display: flex;
     flex-direction: column;
 }
 
-.restaurant__bottomimage-food,
-.restaurant__bottomimage-drinks {
+.bottomsection__food,
+.bottomsection__drinks {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-.restaurant__bottomimage-foodtext,
-.restaurant__bottomimage-drinkstext {
+.bottomsection__foodtext,
+.bottomsection__drinkstext {
     width: 30%;
     margin: auto auto;
     font-size: 1.6em;
@@ -105,7 +105,7 @@ body {
     margin-top: 30px;
 }
 
-.restaurant__image-container {
+.bottomsection__image-container {
     width: 30%;
 }
 
@@ -123,18 +123,18 @@ body {
     transform: scale(1.5)
 }
 
-.restaurant__bottomimage-menu1 {
+.bottomsection__menu1 {
     background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/35151615_1793687987364122_7124972108337119232_n.jpg?_nc_cat=0&oh=8425569fc029669dca8d9b9fe7068883&oe=5BEDF634");
 }
 
-.restaurant__bottomimage-menu2 {
+.bottomsection__menu2 {
     background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/35199072_1793687944030793_6904130215736246272_n.jpg?_nc_cat=0&oh=ab1453af6119c4b322f86714be8bb01c&oe=5C0C009D");
 }
 
-.restaurant__bottomimage-menu3 {
+.bottomsection__menu3 {
     background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/35144972_1793687937364127_2161339800907415552_n.jpg?_nc_cat=0&oh=ad1b4f2d6132265c18b02573ae65ccaf&oe=5C08F436");
 }
 
-.restaurant__bottomimage-menu4 {
+.bottomsection__menu4 {
     background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/35236967_1793687907364130_2594427763116998656_n.jpg?_nc_cat=0&oh=3700b2c817e207ebba261cf77a0864fb&oe=5C024E4F");
 }
