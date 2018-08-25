@@ -25,6 +25,7 @@ body {
     font-size: 1.2em;
 }
 
+/* todo Add media queries for images (1 per page) */
 @media screen and (max-width: 600px) {
     .firstspace__textcontainer {
         font-size: 0.8em;
@@ -80,6 +81,7 @@ body {
 
 .fab, .fas {
     font-size: 1.6em;
+    color: black;
 }
 
 .fa-instagram, .fa-location-arrow {
