@@ -2,97 +2,82 @@
 
   <link rel="stylesheet" href="/styles/restaurants-show.css">
   <link rel="stylesheet" href="/styles/restaurants-new.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
 
-  <div>
-  <div class="restaurant">
-    <div class="restaurant__leftcontainer">
-      <div class="restaurant__leftpanel">
-        <p class="restaurant__name"><%=restaurant.name %></p>
-        <div class="restaurant__categories">
-          <ul class="restaurant__categories-listcontainer">
-            <li class="restaurant__categories-listitem">VEGETARIAN</li>
-            <li class="restaurant__categories-listitem">DELIVERY</li>
-            <li class="restaurant__categories-listitem">COFFEE</li>
-          </ul>
-        </div>
-        <div class="restaurant__map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2550.7945704406297!2d19.022292117337!3d50.25842095888756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce362ef81d2f%3A0x213565b9d5246d2d!2sFabryka+kurtosza!5e0!3m2!1sen!2spl!4v1534535549325"
-            width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
+  <!-- <section class="restaurant__topimage big-image"></section> -->
+  <img class="big-image" src="https://www.slaskie.travel/Media/Default/.MainStorage/ContentItemDocumentTypeRecord/knuefzjs.z4w/3%20siostry.jpg">
 
-        <form class="newcomment" action="/restaurants/<%= restaurant._id %>/comments" method="POST">
-          <div class="newcomment__container">
-              <input class="newcomment__input" type="text" name="comment[text]" placeholder="comment">
-              <input class="newcomment__input" type="text" name="comment[author]" placeholder="author">
-              <a class="button newcomment__link" href="/restaurants">Go back</a>
-              <button class="button newcomment__button" type="submit">Add</button>
-          </div>
-      </form>
+  <section class="firstspace">
+    <div class="firstspace__textcontainer">
+      <span class="firstspace__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+    </div>
+  </section>
 
+  <!-- <section class="restaurant__middleimage big-image"></section> -->
+  <img class="big-image" src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/33660416_1778758922190362_5038691327693291520_n.jpg?_nc_cat=0&oh=839b08d5a9f51c87c3ef85af05979a99&oe=5BF4D693">
 
+  <section class="secondspace">
+    <div class="secondspace__firstblock">
+      <div class="secondspace__firstblockcontainer">
+        <h3 class="secondspace__textheader">HOURS</h3>
+        <p>Monday-Thursday: 08.00 - 20.00</p>
+        <p>Friday: 08.00 - 21.00</p>
+        <p>Saturday: 09.00 - 21.00</p>
+        <p>Sunday: 09.00 - 19.00</p>
       </div>
     </div>
-
-
-    <div class="restaurant__rightcontainer">
-      <div class="restaurant__main">
-        <div class="restaurant__images">
-          <div class="restaurant__image">
-            <figure class="restaurant__image-figure first">
-              <figcaption>Photo</figcaption>
-              <img src="<%= restaurant.image %>">
-            </figure>
-          </div>
-          <div class="restaurant__image">
-            <figure class="restaurant__image-figure second">
-              <figcaption>Menu</figcaption>
-              <img src="<%= restaurant.menu %>">
-            </figure>
-          </div>
-        </div>
+    <div class="secondspace__secondblock">
+      <div class="secondspace__secondblockcontainer">
+        <h3 class="secondspace__textheader">CONTACT</h3>
+        <p>Świętego Stanisława 8</p>
+        <p>40-001 Katowice</p>
+        <p>517 192 511</p>
+        <p>
+          <a href="https://www.facebook.com/3siostry.katowice/"><i class="fab fa-facebook-square"></i></a>
+          <a href="https://www.instagram.com/3siostry.katowice/?hl=en"><i class="fab fa-instagram"></i></a>
+          <i class="fas fa-location-arrow"></i>
+        </p>
       </div>
-
-      <div class="restaurant__bottomsection">
-        <div class="restaurant__description">
-          <p class="restaurant__description-name">Description</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <b></b>
-        <div class="restaurant__comments">
-          <p class="restaurant__comments-name">Comments</p><% restaurant.comments.forEach(function(comment) { %><p>
-              <em><%= comment.text %></em> by <%= comment.author %></p>
-            <% }) %>
-        </div>
-      </div>
-
     </div>
+    <div class="secondspace__thirdblock">
+      <div class="secondspace__thirdblockcontainer">
+        <h3 class="secondspace__textheader">LOCATION</h3>
+        <div class="secondspace__map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2550.8273924086666!2d19.024070951321818!3d50.257807979348286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDE1JzI4LjEiTiAxOcKwMDEnMzQuNiJF!5e0!3m2!1sen!2spl!4v1534973680281"
+            width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  </div>
-  <!-- <p><%=restaurant.name %></p>
+  <section class="bottomsection">
+    <div class="bottomsection__foodtext">
+      <h2>FOOD</h2>
+    </div>
+    <div class="bottomsection__food">
+      <div class="bottomsection__image-container">
+        <img class="menuimage" src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/35151615_1793687987364122_7124972108337119232_n.jpg?_nc_cat=0&oh=8425569fc029669dca8d9b9fe7068883&oe=5BEDF634">
+      </div>
+      <div class="bottomsection__image-container right">
+        <img class="menuimage" src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/35199072_1793687944030793_6904130215736246272_n.jpg?_nc_cat=0&oh=ab1453af6119c4b322f86714be8bb01c&oe=5C0C009D">
+      </div>
+    </div>
+    <div class="bottomsection__drinkstext">
+      <h2>DRINKS</h2>
+    </div>
+    <div class="bottomsection__drinks">
+      <div class="bottomsection__image-container">
+        <div class="bottomsection__menu3 menuimage"></div>
+      </div>
+      <div class="bottomsection__image-container right">
+        <div class="bottomsection__menu4 menuimage"></div>
+      </div>
+    </div>
+  </section>
 
-<img src="<%= restaurant.image %>">
-
-<p><%= restaurant.description %></p>
-
-<div>
-    <p>comments</p>
-   <% restaurant.comments.forEach(function(comment) { %>
-    <p><em><%= comment.text %></em> by <%= comment.author %></p>
-  <% }) %>
-</div>
-
-<p>
-  <a class="button" href="/restaurants/<%= restaurant._id %>/comments/new">Add New Comment</a>
-</p> -->
-
-
-
-  </div>
-
-  
   <script type="text/javascript" src="/scripts/restaurant-show.js"></script>
 
   <% include partials/footer.ejs %>
