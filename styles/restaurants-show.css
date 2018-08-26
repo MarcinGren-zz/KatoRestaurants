@@ -2,15 +2,11 @@ body {
     background-color: rgba(190, 190, 190, 0.15);
 }
 
-.bigimages {
+.big-image {
     height: 700px;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.restaurant__topimage {
-    background-image: url("https://www.slaskie.travel/Media/Default/.MainStorage/ContentItemDocumentTypeRecord/knuefzjs.z4w/3%20siostry.jpg")
 }
 
 .firstspace {
@@ -19,7 +15,7 @@ body {
 
 .firstspace__textcontainer {
     width: 60%;
-    margin: auto auto;
+    margin: auto;
     text-align: center;
     line-height: 500px;
     font-size: 1.2em;
@@ -38,10 +34,6 @@ body {
     line-height: normal;
     letter-spacing: 2px;
     font-size: 1.3em;
-}
-
-.restaurant__middleimage {
-    background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/33660416_1778758922190362_5038691327693291520_n.jpg?_nc_cat=0&oh=839b08d5a9f51c87c3ef85af05979a99&oe=5BF4D693")
 }
 
 .secondspace {
