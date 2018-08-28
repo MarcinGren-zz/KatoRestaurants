@@ -1,11 +1,14 @@
-const express = require('express'),
-    app = express(),
-    bodyParser = require('body-parser'),
-    dbConnection = require('./config'),
-    mongoose = require('mongoose'),
-    Restaurant = require('./models/restaurant'),
-    Comment = require('./models/comment'),
-    seedDb = require('./seeds')
+const express       = require('express'),
+      bodyParser    = require('body-parser'),
+      dbConnection  = require('./config'),
+      mongoose      = require('mongoose'),
+      passport      = require('passport'),
+      localStrategy = require('passport-local'),
+      Restaurant    = require('./models/restaurant'),
+      Comment       = require('./models/comment'),
+      User          = require('./models/user')
+      seedDb        = require('./seeds')
+      app           = express()
 
 // function getRestaurants() {
 //     Restaurant.find({}, function (err, allRestaurants) {
