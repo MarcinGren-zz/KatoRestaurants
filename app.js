@@ -27,7 +27,17 @@ const express       = require('express'),
 seedDb()
 mongoose.connect(`mongodb://${dbConnection.DB_USERNAME}:${dbConnection.DB_PASSWORD}@ds029635.mlab.com:29635/seedkatorestaurants`)
 
-
+// PASSPORT CONFIG
+app.use(require('express-session')({
+    secret: 'its not hard to crack',
+    resave: false,
+    saveUninitialized: false
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+passport.use(new localStrategy(User.authenticate()))
+passport.serializeUser(User.serializeUser())
+passport.deserializeUser(User.deserializeUser())
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -109,6 +119,13 @@ app.post('/restaurants/:id/comments', function (req, res) {
         })
     })
 })
+
+// AUTH ROUTES
+app.get('/register', function(req, res) {
+    res.render('/register')
+})
+
+
 
 app.listen(8080, function () {
     console.log('App has started')
