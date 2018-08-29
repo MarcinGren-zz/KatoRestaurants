@@ -122,10 +122,21 @@ app.post('/restaurants/:id/comments', function (req, res) {
 
 // AUTH ROUTES
 app.get('/register', function(req, res) {
-    res.render('/register')
+    res.render('register.ejs')
 })
 
-
+app.post('/register', function(req, res) {
+    let newUser = new User({username: req.body.username})
+    User.register(newUser, req.body.password, function(err ,user) {
+        if (err) {
+            console.log(err)
+            return res.render('/register')
+        }
+        passport.authenticate('local')(req, res, function() {
+            res.redirect('/restaurants')
+        })
+    })
+})
 
 app.listen(8080, function () {
     console.log('App has started')
