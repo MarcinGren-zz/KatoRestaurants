@@ -138,6 +138,16 @@ app.post('/register', function(req, res) {
     })
 })
 
+app.get('/login', function(req, res) {
+    res.render('login.ejs')
+})
+
+app.post('/login', passport.authenticate('local', {
+    successRedirect: '/restaurants',
+    failureRedirect: '/login'
+}), function(req, res) {
+})
+
 app.listen(8080, function () {
     console.log('App has started')
 })
