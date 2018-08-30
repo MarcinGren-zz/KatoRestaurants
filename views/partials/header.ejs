@@ -13,7 +13,11 @@
 
     <div class="topnav">
         <a class="topnav__left" href="/">KatoRestaurants</a>
-        <a class="topnav__right" href="/login">Login</a>
-        <a class="topnav__right" href="/register">Sign up</a>
+        <% if(!currentUser) { %>
+            <a class="topnav__right" href="/login">Login</a>
+            <a class="topnav__right" href="/register">Sign up</a>
+        <% } else { %>
         <a class="topnav__right" href="/logout">Logout</a>
+        <li class="topnav__right">Signed in as <%= currentUser.username %></li>
+        <% } %>
     </div>
