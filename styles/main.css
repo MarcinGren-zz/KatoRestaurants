@@ -66,6 +66,10 @@ img {
     padding: 0.5em;
 }
 
+.rows__listing-edit {
+    float: right;
+}
+
 figcaption {
     font-weight: bold;
 }

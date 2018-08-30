@@ -1,14 +1,15 @@
-const express       = require('express'),
-      bodyParser    = require('body-parser'),
-      dbConnection  = require('./config'),
-      mongoose      = require('mongoose'),
-      passport      = require('passport'),
-      localStrategy = require('passport-local'),
-      Restaurant    = require('./models/restaurant'),
-      Comment       = require('./models/comment'),
-      User          = require('./models/user')
-      seedDb        = require('./seeds')
-      app           = express()
+const express        = require('express'),
+      bodyParser     = require('body-parser'),
+      dbConnection   = require('./config'),
+      mongoose       = require('mongoose'),
+      passport       = require('passport'),
+      localStrategy  = require('passport-local'),
+      methodOverride = require('method-override'),
+      Restaurant     = require('./models/restaurant'),
+      Comment        = require('./models/comment'),
+      User           = require('./models/user')
+      seedDb         = require('./seeds')
+      app            = express()
 
 const restaurantsRoutes = require('./routes/restaurants'),
       commentRoutes     = require('./routes/comments'),
@@ -51,6 +52,8 @@ app.use(function(req, res, next) {
     res.locals.currentUser = req.user
     next()
 })
+app.use(methodOverride('_method'))
+
 
 app.use(indexRoutes)
 app.use('/restaurants', restaurantsRoutes)

@@ -1,5 +1,7 @@
 <% include partials/header.ejs %>
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+
 <div class="containers">
         <header class=hdr>
             <div class="container">
@@ -20,7 +22,7 @@
                 <a href="/restaurants/<%= restaurant._id %>">
                     <div class='rows__listing'>
                         <figure class="rows__listing-figure">
-                            <figcaption><%= restaurant.name %></figcaption>
+                            <figcaption><%= restaurant.name %><a class="rows__listing-edit" href="/restaurants/<%= restaurant._id %>/edit"><i class="far fa-edit"></i></a></figcaption>
                             <p><img src="<%= restaurant.image %>"></p>
                         </figure>
 

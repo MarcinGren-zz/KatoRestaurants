@@ -57,4 +57,25 @@ router.get('/:id', function (req, res) {
     })
 })
 
+// EDIT ROUTE
+router.get('/:id/edit', function(req, res) {
+    Restaurant.findById(req.params.id, function(err, foundRestaurant) {
+        if (err) {
+            res.redirect('/restaurants')
+        } else {
+            res.render('restaurants-edit.ejs', {restaurant: foundRestaurant})
+        }
+    })
+})
+
+router.put('/:id', function(req, res) {
+    Restaurant.findByIdAndUpdate(req.params.id, req.body.restaurant, function(err, updatedRestaurant) {
+        if (err) {
+            res.redirect('/restaurants')
+        } else {
+            res.redirect(`/restaurants/${req.params.id}`)
+        }
+    })
+})
+
 module.exports = router
