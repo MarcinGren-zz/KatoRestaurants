@@ -1,6 +1,7 @@
 const express    = require('express'),
       router     = express.Router(),
-      Restaurant = require('../models/restaurant')
+      Restaurant = require('../models/restaurant'),
+      isLoggedIn = require('../scripts/is-logged-in')
 
 // INDEX ROUTE
 router.get('/', function (req, res) {
@@ -16,16 +17,21 @@ router.get('/', function (req, res) {
 })
 
 // CREATE ROUTE
-router.post('/', function (req, res) {
+router.post('/', isLoggedIn, function (req, res) {
     var name = req.body.name
     var image = req.body.image
     var desc = req.body.description
     var menu = req.body.menu
+    var author = {
+        id: req.user._id,
+        username: req.user.username
+    }
     var newRestaurant = {
         name: name,
         image: image,
         menu: menu,
-        description: desc
+        description: desc,
+        author: author
     }
     Restaurant.create(newRestaurant, function (err) {
         console.log(err)
@@ -34,7 +40,7 @@ router.post('/', function (req, res) {
 })
 
 // NEW ROUTE
-router.get('/new', function (req, res) {
+router.get('/new', isLoggedIn, function (req, res) {
     res.render('restaurants-new.ejs')
 })
 

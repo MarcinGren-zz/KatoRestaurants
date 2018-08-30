@@ -5,6 +5,13 @@ const restaurantSchema = new mongoose.Schema({
     image: String,
     description: String, //not sure about this
     menu: String,
+    author: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        },
+        username: String
+    },
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comment'

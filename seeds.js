@@ -48,23 +48,23 @@ function seedDB() {
                 console.log(err)
             } else {
                 console.log('added restaurant')
-                Comment.create({
-                    text: 'Awesome place, definitely coming back, would recommend to all my friends',
-                    author: 'Some dude'
-                }, function (err, comment) {
-                    if (err) {
-                        console.log(err)
-                    } else {
-                        restaurant.comments.push(comment)
-                        restaurant.comments.push(comment)
-                        restaurant.comments.push(comment)
-                        restaurant.comments.push(comment)
-                        restaurant.comments.push(comment)
-                        restaurant.comments.push(comment)
-                        restaurant.save()
-                        console.log('added comment')
-                    }
-                })
+                // Comment.create({
+                //     text: 'Awesome place, definitely coming back, would recommend to all my friends',
+                //     author: 'Some dude'
+                // }, function (err, comment) {
+                //     if (err) {
+                //         console.log(err)
+                //     } else {
+                //         restaurant.comments.push(comment)
+                //         restaurant.comments.push(comment)
+                //         restaurant.comments.push(comment)
+                //         restaurant.comments.push(comment)
+                //         restaurant.comments.push(comment)
+                //         restaurant.comments.push(comment)
+                //         restaurant.save()
+                //         console.log('added comment')
+                //     }
+                // })
             }
         })
     })

@@ -16,11 +16,15 @@ router.get('/new', isLoggedIn, function (req, res) {
 // CREATE ROUTE
 router.post('/', isLoggedIn, function (req, res) {
     Restaurant.findById(req.params.id, function (err, restaurant) {
-        Comment.create(req.body.comment, function (err, commentCreated) { // Do the same above for restaurant
+        Comment.create(req.body.comment, function (err, comment) { // Do the same above for restaurant
             if (err) {
                 console.log(err)
             } else {
-                restaurant.comments.push(commentCreated)
+                // add username / id
+                comment.author.id = req.user._id
+                comment.author.username = req.user.username
+                comment.save()
+                restaurant.comments.push(comment)
                 restaurant.save()
                 res.redirect('/restaurants/' + restaurant._id)
             }
