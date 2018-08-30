@@ -49,7 +49,7 @@ function seedDB() {
             } else {
                 console.log('added restaurant')
                 Comment.create({
-                    text: 'Nice place',
+                    text: 'Awesome place, definitely coming back, would recommend to all my friends',
                     author: 'Some dude'
                 }, function (err, comment) {
                     if (err) {

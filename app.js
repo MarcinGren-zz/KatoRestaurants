@@ -98,7 +98,7 @@ app.get('/restaurants/:id', function (req, res) {
 })
 
 // COMMENTS NEW ROUTE - restrautants/:id/comments/new   GET
-app.get('/restaurants/:id/comments/new', function (req, res) {
+app.get('/restaurants/:id/comments/new', isLoggedIn, function (req, res) {
     Restaurant.findById(req.params.id, function (err, restaurantUsed) {
         res.render('comments-new.ejs', {
             restaurant: restaurantUsed
@@ -106,7 +106,7 @@ app.get('/restaurants/:id/comments/new', function (req, res) {
     })
 })
 // COMMENTS CREATE ROUTE - restrautants/:id/comments    POST
-app.post('/restaurants/:id/comments', function (req, res) {
+app.post('/restaurants/:id/comments', isLoggedIn, function (req, res) {
     Restaurant.findById(req.params.id, function (err, restaurant) {
         Comment.create(req.body.comment, function (err, commentCreated) { // Do the same above for restaurant
             if (err) {
@@ -147,6 +147,18 @@ app.post('/login', passport.authenticate('local', {
     failureRedirect: '/login'
 }), function(req, res) {
 })
+
+app.get('/logout', function(req ,res) {
+    req.logout()
+    res.redirect('/restaurants')
+})
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next()
+    }
+    res.redirect('/login')
+}
 
 app.listen(8080, function () {
     console.log('App has started')

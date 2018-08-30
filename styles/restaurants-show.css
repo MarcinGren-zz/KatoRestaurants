@@ -22,6 +22,7 @@ body {
 }
 
 /* todo Add media queries for images (1 per page) */
+
 @media screen and (max-width: 600px) {
     .firstspace__textcontainer {
         font-size: 0.8em;
@@ -91,14 +92,32 @@ body {
     justify-content: space-around;
 }
 
-.bottomsection__foodtext, .bottomsection__drinkstext {
+.bottomsection__foodtext, 
+.bottomsection__drinkstext, 
+.bottomsection__comments-text {
     width: 30%;
-    margin: auto auto;
+    margin: auto;
     font-size: 1.6em;
     text-align: center;
     border-bottom: 5px solid black;
     margin-bottom: 50px;
     margin-top: 30px;
+}
+
+.fa-plus-square {
+    float: right;
+    color: black;
+}
+
+.bottomsection__comment {
+    width: 70%;
+    margin: auto;
+    font-size: 1.2em;
+    text-align: center;
+    border-bottom: 0.5px solid gainsboro;
+    margin-bottom: 50px;
+    margin-top: 30px;
+
 }
 
 .bottomsection__image-container {

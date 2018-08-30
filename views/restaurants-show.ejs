@@ -78,6 +78,17 @@
     </div>
   </section>
 
+  <section>
+    <div class="bottomsection__comments">
+      <div class="bottomsection__comments-text">        
+        <h2>Comments <a href='/restaurants/<%= restaurant._id %>/comments/new'><i class="far fa-plus-square"></i></a></h2>
+      </div>
+      <% restaurant.comments.forEach(function(comment) { %>
+        <p class="bottomsection__comment"><em><%= comment.text %></em> by <%= comment.author %></p>
+        <% }) %>
+    </div>
+  </section>
+
   <script type="text/javascript" src="/scripts/restaurant-show.js"></script>
 
   <% include partials/footer.ejs %>
