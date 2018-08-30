@@ -66,10 +66,24 @@ img {
     padding: 0.5em;
 }
 
-.rows__listing-edit {
+.rows__listing-icon {
     float: right;
+    color: black;
+    padding-left: 10px;
+}
+
+.rows__listing-icon button {
+    padding: 0;
+    border: none;
+    background-color: inherit;
+}
+
+.rows__listing-icon button:hover {
+    cursor: pointer;
 }
 
 figcaption {
     font-weight: bold;
+    text-align: center;
+    padding-left: 10%;
 }

@@ -22,7 +22,10 @@
                 <a href="/restaurants/<%= restaurant._id %>">
                     <div class='rows__listing'>
                         <figure class="rows__listing-figure">
-                            <figcaption><%= restaurant.name %><a class="rows__listing-edit" href="/restaurants/<%= restaurant._id %>/edit"><i class="far fa-edit"></i></a></figcaption>
+                            <figcaption><%= restaurant.name %>
+                                <a class="rows__listing-icon" href="/restaurants/<%= restaurant._id %>/edit"><i class="far fa-edit"></i></a>
+                                <form class="rows__listing-icon" action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST"><button type="submit"><i class="far fa-trash-alt"></i></button></form>
+                            </figcaption>
                             <p><img src="<%= restaurant.image %>"></p>
                         </figure>
 

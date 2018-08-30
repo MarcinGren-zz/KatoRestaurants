@@ -68,12 +68,24 @@ router.get('/:id/edit', function(req, res) {
     })
 })
 
+// UPDATE ROUTE
 router.put('/:id', function(req, res) {
     Restaurant.findByIdAndUpdate(req.params.id, req.body.restaurant, function(err, updatedRestaurant) {
         if (err) {
             res.redirect('/restaurants')
         } else {
             res.redirect(`/restaurants/${req.params.id}`)
+        }
+    })
+})
+
+// DESTROY ROUTE
+router.delete('/:id', function(req, res) {
+    Restaurant.findByIdAndRemove(req.params.id, function(err) {
+        if (err) {
+            res.redirect('/restaurants')
+        } else {
+            res.redirect('/restaurants')
         }
     })
 })
