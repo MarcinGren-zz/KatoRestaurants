@@ -10,6 +10,10 @@ const express       = require('express'),
       seedDb        = require('./seeds')
       app           = express()
 
+const restaurantsRoutes = require('./routes/restaurants'),
+      commentRoutes     = require('./routes/comments'),
+      indexRoutes       = require('./routes/index')
+
 // function getRestaurants() {
 //     Restaurant.find({}, function (err, allRestaurants) {
 //         if (err) {
@@ -48,121 +52,9 @@ app.use(function(req, res, next) {
     next()
 })
 
-app.get('/', function (req, res) {
-    res.render('homepage.ejs')
-})
-
-// INDEX ROUTE
-app.get('/restaurants', function (req, res) {
-    Restaurant.find({}, function (err, allRestaurants) {
-        if (err) {
-            console.log('COULDNT OBTAIN RESTAURANTS')
-        } else {
-            res.render('restaurants-index.ejs', {
-                restaurants: allRestaurants
-            })
-        }
-    })
-})
-
-// CREATE ROUTE
-app.post('/restaurants', function (req, res) {
-    var name = req.body.name
-    var image = req.body.image
-    var desc = req.body.description
-    var menu = req.body.menu
-    var newRestaurant = {
-        name: name,
-        image: image,
-        menu: menu,
-        description: desc
-    }
-    Restaurant.create(newRestaurant, function (err) {
-        console.log(err)
-    })
-    res.redirect('/restaurants')
-})
-
-// NEW ROUTE
-app.get('/restaurants/new', function (req, res) {
-    res.render('restaurants-new.ejs')
-})
-
-// SHOW ROUTE
-app.get('/restaurants/:id', function (req, res) {
-    Restaurant.findById(req.params.id).populate('comments').exec(function (err, restaurantUsed) {
-        if (err) {
-            console.log(err)
-        } else {
-            res.render('restaurants-show.ejs', {
-                restaurant: restaurantUsed
-            })
-        }
-    })
-})
-
-// COMMENTS NEW ROUTE - restrautants/:id/comments/new   GET
-app.get('/restaurants/:id/comments/new', isLoggedIn, function (req, res) {
-    Restaurant.findById(req.params.id, function (err, restaurantUsed) {
-        res.render('comments-new.ejs', {
-            restaurant: restaurantUsed
-        })
-    })
-})
-// COMMENTS CREATE ROUTE - restrautants/:id/comments    POST
-app.post('/restaurants/:id/comments', isLoggedIn, function (req, res) {
-    Restaurant.findById(req.params.id, function (err, restaurant) {
-        Comment.create(req.body.comment, function (err, commentCreated) { // Do the same above for restaurant
-            if (err) {
-                console.log(err)
-            } else {
-                restaurant.comments.push(commentCreated)
-                restaurant.save()
-                res.redirect('/restaurants/' + restaurant._id)
-            }
-        })
-    })
-})
-
-// AUTH ROUTES
-app.get('/register', function(req, res) {
-    res.render('register.ejs')
-})
-
-app.post('/register', function(req, res) {
-    let newUser = new User({username: req.body.username})
-    User.register(newUser, req.body.password, function(err ,user) {
-        if (err) {
-            console.log(err)
-            return res.render('/register')
-        }
-        passport.authenticate('local')(req, res, function() {
-            res.redirect('/restaurants')
-        })
-    })
-})
-
-app.get('/login', function(req, res) {
-    res.render('login.ejs')
-})
-
-app.post('/login', passport.authenticate('local', {
-    successRedirect: '/restaurants',
-    failureRedirect: '/login'
-}), function(req, res) {
-})
-
-app.get('/logout', function(req ,res) {
-    req.logout()
-    res.redirect('/restaurants')
-})
-
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next()
-    }
-    res.redirect('/login')
-}
+app.use(indexRoutes)
+app.use('/restaurants', restaurantsRoutes)
+app.use('/restaurants/:id/comments', commentRoutes)
 
 app.listen(8080, function () {
     console.log('App has started')
