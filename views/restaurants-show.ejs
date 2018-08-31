@@ -84,8 +84,20 @@
         <h2>Comments <a href='/restaurants/<%= restaurant._id %>/comments/new'><i class="far fa-plus-square"></i></a></h2>
       </div>
       <% restaurant.comments.forEach(function(comment) { %>
-        <p class="bottomsection__comment"><em><%= comment.text %></em> by <%= comment.author.username %></p>
-        <% }) %>
+      <div class="bottomsection__comment">
+        <div class="bottomsection__comment-author">
+          <%= comment.author.username %>
+          <% if (currentUser && comment.author.id.equals(currentUser._id)) { %>
+          <form class="bottomsection__comment-icon" action="/restaurants/<%= restaurant._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST"><button type="submit"><i class="far fa-trash-alt"></i></button></form>
+          <a class="bottomsection__comment-icon" href="/restaurants/<%= restaurant._id %>/comments/<%= comment._id %>/edit"><i class="far fa-edit"></i></a>
+          <% } else { %>
+          <a class="bottomsection__comment-icon--disabled"><i class="far fa-trash-alt"></i></a>
+          <a class="bottomsection__comment-icon--disabled"><i class="far fa-edit"></i></a>
+          <% } %>
+        </div>
+        <p class="bottomsection__comment-text"><%= comment.text %></p>
+      </div>
+      <% }) %>
     </div>
   </section>
 

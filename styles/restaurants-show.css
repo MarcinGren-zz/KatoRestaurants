@@ -112,12 +112,45 @@ body {
 .bottomsection__comment {
     width: 70%;
     margin: auto;
-    font-size: 1.2em;
-    text-align: center;
+    text-align: left;
     border-bottom: 0.5px solid gainsboro;
     margin-bottom: 50px;
     margin-top: 30px;
+}
 
+.bottomsection__comment-text {
+    word-wrap: break-word;
+    /* font-style: italic; */
+}
+
+.bottomsection__comment-author {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.bottomsection__comment-icon,
+.bottomsection__comment-icon--disabled {
+    float: right;
+    color: black;
+    margin-left: 10px;
+}
+
+/* Similar thing in restaurant-show, can merge those into 1 class */
+.bottomsection__comment-icon button,
+.bottomsection__comment-icon--disabled button {
+    background-color: inherit;
+    line-height: 0;
+    font-size: inherit;
+    border: none;
+    padding: 0;
+}
+
+.bottomsection__comment-icon button:hover {
+    cursor: pointer;
+}
+
+.bottomsection__comment-icon--disabled:hover {
+    cursor: not-allowed;
 }
 
 .bottomsection__image-container {

@@ -1,0 +1,18 @@
+<% include partials/header.ejs %>
+
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/restaurants-new.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+    <h1>Edit comment</h1>
+
+    <form class="newform" action="/restaurants/<%= restaurant_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+        <div class="newform__container">
+            <input class="newform__input" type="text" name="comment[text]" value="<%= comment.text %>">
+            <a class="button newform__link" href="/restaurants">Go back</a>
+            <button class="button newform__button" type="submit">Add</button>
+        </div>
+    </form>
+
+
+    <% include partials/footer.ejs %>

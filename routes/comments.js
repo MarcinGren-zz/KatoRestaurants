@@ -1,8 +1,9 @@
-const express    = require('express'),
-      router     = express.Router({mergeParams: true}),
-      Restaurant = require('../models/restaurant'),
-      Comment    = require('../models/comment'),
-      isLoggedIn = require('../scripts/is-logged-in')
+const express          = require('express'),
+    router             = express.Router({mergeParams: true}),
+    Restaurant         = require('../models/restaurant'),
+    Comment            = require('../models/comment'),
+    isLoggedIn         = require('../scripts/is-logged-in'),
+    checkCommentAuthor = require('../scripts/check-comment-author')
 
 // NEW ROUTE
 router.get('/new', isLoggedIn, function (req, res) {
@@ -29,6 +30,42 @@ router.post('/', isLoggedIn, function (req, res) {
                 res.redirect('/restaurants/' + restaurant._id)
             }
         })
+    })
+})
+
+// EDIT ROUTE
+router.get('/:comment_id/edit', checkCommentAuthor, function (req, res) {
+    Comment.findById(req.params.comment_id, function (err, foundComment) {
+        if (err) {
+            res.redirect('back')
+        } else {
+            res.render("comments-edit.ejs", {
+                restaurant_id: req.params.id,
+                comment: foundComment
+            })
+        }
+    })
+})
+
+// UPDATE ROUTE
+router.put('/:comment_id', checkCommentAuthor, function(req, res) {
+    Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(err, updatedComment) {
+        if (err) {
+            res.redirect('back')
+        } else {
+            res.redirect(`/restaurants/${req.params.id}`)
+        }
+    })
+})
+
+// DESTROY ROUTE
+router.delete('/:comment_id', checkCommentAuthor, function(req, res) {
+    Comment.findByIdAndRemove(req.params.comment_id, function(err) {
+        if (err) {
+            res.redirect(`/restaurants/${req.params.id}`)
+        } else {
+            res.redirect(`/restaurants/${req.params.id}`)
+        }
     })
 })
 
