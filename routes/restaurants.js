@@ -1,7 +1,8 @@
-const express    = require('express'),
-      router     = express.Router(),
-      Restaurant = require('../models/restaurant'),
-      isLoggedIn = require('../scripts/is-logged-in')
+const express               = require('express'),
+      router                = express.Router(),
+      Restaurant            = require('../models/restaurant'),
+      isLoggedIn            = require('../scripts/is-logged-in'),
+      checkCampgroundAuthor = require('../scripts/check-campground-author')
 
 // INDEX ROUTE
 router.get('/', function (req, res) {
@@ -58,18 +59,14 @@ router.get('/:id', function (req, res) {
 })
 
 // EDIT ROUTE
-router.get('/:id/edit', function(req, res) {
-    Restaurant.findById(req.params.id, function(err, foundRestaurant) {
-        if (err) {
-            res.redirect('/restaurants')
-        } else {
-            res.render('restaurants-edit.ejs', {restaurant: foundRestaurant})
-        }
+router.get('/:id/edit', checkCampgroundAuthor, function (req, res) {
+    Restaurant.findById(req.params.id, function (err, foundRestaurant) {
+        res.render('restaurants-edit.ejs', {restaurant: foundRestaurant})
     })
 })
 
 // UPDATE ROUTE
-router.put('/:id', function(req, res) {
+router.put('/:id', checkCampgroundAuthor, function(req, res) {
     Restaurant.findByIdAndUpdate(req.params.id, req.body.restaurant, function(err, updatedRestaurant) {
         if (err) {
             res.redirect('/restaurants')
@@ -80,7 +77,7 @@ router.put('/:id', function(req, res) {
 })
 
 // DESTROY ROUTE
-router.delete('/:id', function(req, res) {
+router.delete('/:id', checkCampgroundAuthor, function(req, res) {
     Restaurant.findByIdAndRemove(req.params.id, function(err) {
         if (err) {
             res.redirect('/restaurants')

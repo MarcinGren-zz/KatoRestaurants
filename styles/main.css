@@ -66,13 +66,15 @@ img {
     padding: 0.5em;
 }
 
-.rows__listing-icon {
+.rows__listing-icon,
+.rows__listing-icon--disabled {
     float: right;
     color: black;
     padding-left: 10px;
 }
 
-.rows__listing-icon button {
+.rows__listing-icon button,
+.rows__listing-icon--disabled button {
     padding: 0;
     border: none;
     background-color: inherit;
@@ -80,6 +82,10 @@ img {
 
 .rows__listing-icon button:hover {
     cursor: pointer;
+}
+
+.rows__listing-icon--disabled:hover {
+    cursor: not-allowed;
 }
 
 figcaption {

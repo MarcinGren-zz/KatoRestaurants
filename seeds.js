@@ -6,30 +6,50 @@ const data = [{
         name: "Fabryka Kurtosza",
         image: "https://s.inyourpocket.com/gallery/183322.jpg",
         menu: "http://lgucma.ayz.pl/wp-content/uploads/2016/03/23.jpg",
+        author: {
+            id: "1b86ed6f57b16410441620f5"
+        },
+        username: "asd",
         description: "foobar"
     },
     {
         name: "Fabryka Kurtosza 2",
         image: "https://s.inyourpocket.com/gallery/183322.jpg",
         menu: "http://lgucma.ayz.pl/wp-content/uploads/2016/03/23.jpg",
+        author: {
+            id: "5b86ed6f57b16410441620f5"
+        },
+        username: "asd",
         description: "foobar"
     },
     {
         name: "Fabryka Kurtosza 2",
         image: "https://s.inyourpocket.com/gallery/183322.jpg",
         menu: "http://lgucma.ayz.pl/wp-content/uploads/2016/03/23.jpg",
+        author: {
+            id: "5b86ed6f57b16410441620f5"
+        },
+        username: "asd",
         description: "foobar"
     },
     {
         name: "Fabryka Kurtosza 2",
         image: "https://s.inyourpocket.com/gallery/183322.jpg",
         menu: "http://lgucma.ayz.pl/wp-content/uploads/2016/03/23.jpg",
+        author: {
+            id: "1b86ed6f57b16410441620f5"
+        },
+        username: "asd",
         description: "foobar"
     },
     {
         name: "Fabryka Kurtosza 3",
         image: "https://s.inyourpocket.com/gallery/183322.jpg",
         menu: "http://lgucma.ayz.pl/wp-content/uploads/2016/03/23.jpg",
+                author: {
+            id: "5b86ed6f57b16410441620f5"
+        },
+        username: "asd",
         description: "foobar"
     }
 ]
