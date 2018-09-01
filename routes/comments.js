@@ -19,6 +19,7 @@ router.post('/', isLoggedIn, function (req, res) {
     Restaurant.findById(req.params.id, function (err, restaurant) {
         Comment.create(req.body.comment, function (err, comment) { // Do the same above for restaurant
             if (err) {
+                req.flash('message', 'Something went wrong, comment not created')
                 console.log(err)
             } else {
                 // add username / id
@@ -27,6 +28,7 @@ router.post('/', isLoggedIn, function (req, res) {
                 comment.save()
                 restaurant.comments.push(comment)
                 restaurant.save()
+                req.flash('message', 'Successfully added comment')
                 res.redirect('/restaurants/' + restaurant._id)
             }
         })
@@ -51,8 +53,10 @@ router.get('/:comment_id/edit', checkCommentAuthor, function (req, res) {
 router.put('/:comment_id', checkCommentAuthor, function(req, res) {
     Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(err, updatedComment) {
         if (err) {
+            req.flash('message', "Couldn't update the comment")
             res.redirect('back')
         } else {
+            req.flash('message', 'Successfully updated the comment')
             res.redirect(`/restaurants/${req.params.id}`)
         }
     })
@@ -62,8 +66,10 @@ router.put('/:comment_id', checkCommentAuthor, function(req, res) {
 router.delete('/:comment_id', checkCommentAuthor, function(req, res) {
     Comment.findByIdAndRemove(req.params.comment_id, function(err) {
         if (err) {
+            req.flash('message', 'Something went wrong, comment not deleted')
             res.redirect(`/restaurants/${req.params.id}`)
         } else {
+            req.flash('message', 'Comment deleted')
             res.redirect(`/restaurants/${req.params.id}`)
         }
     })

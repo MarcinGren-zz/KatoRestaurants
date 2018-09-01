@@ -1,6 +1,9 @@
 .topnav {
     background-color: #333;
     overflow: hidden;
+    width: 100%;
+    position: fixed;
+    height: 46px;
 }
 
 .topnav a {
@@ -36,4 +39,20 @@
 
 .topnav__left {
     float: left;
+}
+
+.topnav__flash-message {
+    float: left;
+    position: relative;
+    left: 30%;
+}
+
+@media screen and (max-width: 700px) {
+    .topnav__flash-message {
+        left: 10%;
+    }
+}
+
+.topnav__placeholder {
+    height: 46px;
 }

@@ -9,6 +9,7 @@ const express        = require('express'),
       Comment        = require('./models/comment'),
       User           = require('./models/user')
       seedDb         = require('./seeds')
+      flash          = require('connect-flash'),
       app            = express()
 
 const restaurantsRoutes = require('./routes/restaurants'),
@@ -38,6 +39,7 @@ app.use(require('express-session')({
     resave: false,
     saveUninitialized: false
 }))
+app.use(flash())
 app.use(passport.initialize())
 app.use(passport.session())
 passport.use(new localStrategy(User.authenticate()))
@@ -50,6 +52,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(__dirname + '/'))
 app.use(function(req, res, next) {
     res.locals.currentUser = req.user
+    res.locals.message = req.flash('message')
     next()
 })
 app.use(methodOverride('_method'))
