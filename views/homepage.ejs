@@ -1,9 +1,19 @@
 <% include partials/header.ejs %>
 
-<h1>Homepage</h1>
+<link rel="stylesheet" href="/styles/homepage.css">
+<link rel="stylesheet" href="/styles/main.css">
 
-<p>hi all</p>
+<div class="menu__container">
+    <h1 class="menu__name">KatoRestaurants</h1>
+    <a class="menu__link button" href="/restaurants">View All Restaurants</a>
+</div>
 
-<a href="/restaurants">View restaurants</a>
+<ul class="slideshow">
+    <li class="slideshow__slide image-one"></li>
+    <li class="slideshow__slide image-two"></li>
+    <li class="slideshow__slide image-three"></li>
+    <li class="slideshow__slide image-four"></li>
+    <li class="slideshow__slide image-five"></li>
+</ul>
 
 <% include partials/footer.ejs %>
