@@ -1,1 +1,1 @@
-module.exports = {DB_USERNAME: 'foo', DB_PASSWORD: 'bar'}
+module.exports = {DB_USERNAME: process.env.DB_USER, DB_PASSWORD: process.env.DB_PASS}
