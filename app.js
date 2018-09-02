@@ -62,6 +62,6 @@ app.use(indexRoutes)
 app.use('/restaurants', restaurantsRoutes)
 app.use('/restaurants/:id/comments', commentRoutes)
 
-app.listen(8080, function () {
+app.listen(process.env.PORT || 5000, function () {
     console.log('App has started')
 })
