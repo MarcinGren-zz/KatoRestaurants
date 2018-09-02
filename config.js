@@ -1,0 +1,1 @@
+module.exports = {DB_USERNAME: 'foo', DB_PASSWORD: 'bar'}
